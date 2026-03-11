@@ -14,6 +14,7 @@
     ./modules/fastfetch.nix
     ./modules/git.nix
     ./modules/shell
+    ./modules/stylix.nix
   ];
 
   # Bootloader.
