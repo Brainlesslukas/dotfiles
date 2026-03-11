@@ -51,8 +51,6 @@
     polarity = "dark";
 
     #targets.neovim.enable = false;
-     
-    };
   };
 
   # User-level Stylix configuration (via Home Manager)
@@ -74,4 +72,3 @@
     };
   };
 }
-

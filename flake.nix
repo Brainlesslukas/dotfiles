@@ -18,7 +18,7 @@
       self,
       nixpkgs,
       home-manager,
-      stylix
+      stylix,
     }:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
