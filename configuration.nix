@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ./modules
     ./modules/shell
+    ./modules/hypr
   ];
 
   # Bootloader.
