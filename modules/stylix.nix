@@ -1,20 +1,3 @@
-# Stylix Configuration Module
-#
-# This module configures Stylix for unified system-wide theming based on base16 color schemes.
-# Stylix automatically themes compatible applications including terminals, editors, browsers,
-# window managers, and more.
-#
-# Color scheme is set via `config.userOptions.colorScheme` in host configuration.
-# See: docs/adr/0003-stylix-for-theming.md for architecture decision details.
-#
-# Theming coverage:
-#   - Window Manager: Hyprland, Sway, etc.
-#   - Terminals: Ghostty, Kitty, Alacritty
-#   - Editors: Neovim, VSCode, Helix
-#   - Shell: Bash, Zsh, Fish
-#   - GTK/Qt applications
-#   - System UI elements (cursor, icons, fonts)
-
 {
   config,
   pkgs,
@@ -45,11 +28,11 @@
         name = "Noto Color Emoji";
       };
       monospace = {
-        package = pkgs.nerd-fonts.fira-code-mono;
-        name = "Fira Code";
+        package = pkgs.nerd-fonts.fira-code;
+        name = "Fira Code Mono";
       };
       sansSerif = {
-        package = pkgs.fira-code-font;
+        package = pkgs.fira-code;
         name = "Fira Code";
       };
       # Use same font for serif as sans-serif for consistency
@@ -67,8 +50,8 @@
     # Color polarity (dark mode)
     polarity = "dark";
 
-    targets = {
-      neovim.enable = false;      
+    #targets.neovim.enable = false;
+     
     };
   };
 
