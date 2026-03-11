@@ -6,18 +6,18 @@
       enable = true;
       settings = {
         monitor = [
-            "eDP-1, disable" 
-          "HDMI-A-1, 3440x1440@100, 0x0, 1" 
+          "eDP-1, disable"
+          "HDMI-A-1, 3440x1440@100, 0x0, 1"
         ];
 
         exec-once = [
           "ghostty"
         ];
-        
+
         input = {
-            kb_layout = "de";
+          kb_layout = "de";
         };
-        
+
         dwindle = {
           pseudotile = true;
           preserve_split = true;
@@ -32,7 +32,7 @@
           gaps_out = 10;
 
           border_size = 0;
-          
+
           resize_on_border = false;
 
           #col.inactive_border = "rgba(00000000)";
@@ -40,7 +40,7 @@
 
           allow_tearing = false;
 
-          layout = "dwindle"; 
+          layout = "dwindle";
         };
 
         decoration = {
@@ -63,7 +63,7 @@
             passes = 4;
 
             vibrancy = 0.1696;
-          }; 
+          };
         };
 
         animations = {
@@ -92,8 +92,8 @@
             "workspaces, 1, 1.94, almostLinear, fade"
             "workspacesIn, 1, 1.21, almostLinear, fade"
             "workspacesOut, 1, 1.94, almostLinear, fade"
-            "zoomFactor, 1, 7, quick" 
-            ];
+            "zoomFactor, 1, 7, quick"
+          ];
         };
 
         "$mainMod" = "SUPER";
@@ -135,7 +135,6 @@
           "$mainMod SHIFT, 8, movetoworkspace, 8"
           "$mainMod SHIFT, 9, movetoworkspace, 9"
           "$mainMod SHIFT, 0, movetoworkspace, 10"
-
 
           "$mainMod, mouse_down, workspace, e+1"
           "$mainMod, mouse_up, workspace, e-1"
