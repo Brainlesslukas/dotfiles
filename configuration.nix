@@ -8,13 +8,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./modules/nh.nix
-    ./modules/home.nix
-    ./modules/ghostty.nix
-    ./modules/fastfetch.nix
-    ./modules/git.nix
+    ./modules
     ./modules/shell
-    ./modules/stylix.nix
   ];
 
   # Bootloader.
