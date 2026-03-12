@@ -7,5 +7,6 @@
     ./nh.nix
     ./stylix.nix
     ./vicinae.nix
+    ./spicetify.nix
   ];
 }

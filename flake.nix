@@ -15,6 +15,10 @@
       url = "github:vicinaehq/vicinae";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -24,6 +28,7 @@
       home-manager,
       stylix,
       vicinae,
+      spicetify-nix
     }:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -33,6 +38,7 @@
           ./hardware-configuration.nix
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
+          spicetify-nix.nixosModules.default
           {
             home-manager.users.lukas = {
               imports = [
