@@ -1,5 +1,5 @@
 {
   imports = [
-    ./polybar.nix
+    ./hyprpanel.nix
   ];
 }
