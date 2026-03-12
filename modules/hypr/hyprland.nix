@@ -101,9 +101,8 @@
           "$mainMod, Q, exec, ghostty"
           "$mainMod, C, killactive,"
           "$mainMod, M, exit,"
-          "$mainMod, Space, exec, $menu toggle"
+          "$mainMod, SPACE, exec, vicinae toggle"
           "$mainMod, V, togglefloating,"
-          "$mainMod, R, exec, $menu"
           "$mainMod, TAB, workspace, previous"
           "$mainMod, P, pseudo," # dwindle
           "$mainMod, J, togglesplit," # dwindle
