@@ -5,7 +5,7 @@
   ...
 }:
 let
- myAliases = import ./commonAliases.nix;
+  myAliases = import ./commonAliases.nix;
 in
 {
   programs.zsh.enable = true;

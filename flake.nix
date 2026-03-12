@@ -23,7 +23,7 @@
       nixpkgs,
       home-manager,
       stylix,
-      vicinae
+      vicinae,
     }:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
