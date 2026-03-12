@@ -19,30 +19,36 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      home-manager,
-      stylix,
-      vicinae,
-      spicetify-nix
-    }:
+      ...
+    }@inputs:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+
+        specialArgs = {
+          inherit inputs;
+        };
+
         modules = [
           ./configuration.nix
           ./hardware-configuration.nix
-          home-manager.nixosModules.home-manager
-          stylix.nixosModules.stylix
-          spicetify-nix.nixosModules.default
+          inputs.home-manager.nixosModules.home-manager
+          inputs.stylix.nixosModules.stylix
+          inputs.spicetify-nix.nixosModules.default
           {
             home-manager.users.lukas = {
               imports = [
-                vicinae.homeManagerModules.default
+                inputs.vicinae.homeManagerModules.default
               ];
             };
           }

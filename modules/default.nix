@@ -8,5 +8,6 @@
     ./stylix.nix
     ./vicinae.nix
     ./spicetify.nix
+    ./zen-browser.nix
   ];
 }
