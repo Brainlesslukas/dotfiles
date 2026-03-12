@@ -4,9 +4,9 @@
   pkgs,
   ...
 }:
-#let
-# myAliases = import ./commonAliases.nix;
-#in
+let
+ myAliases = import ./commonAliases.nix;
+in
 {
   programs.zsh.enable = true;
   environment.shells = with pkgs; [ zsh ];
@@ -20,7 +20,7 @@
       dotDir = "/home/lukas/.config/zsh";
       enableCompletion = false;
       syntaxHighlighting.enable = true;
-      #shellAliases = myAliases;
+      shellAliases = myAliases;
       plugins = [
         {
           name = "tirith";
