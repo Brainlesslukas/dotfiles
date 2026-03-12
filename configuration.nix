@@ -11,6 +11,7 @@
     ./modules
     ./modules/shell
     ./modules/hypr
+    ./modules/services
   ];
 
   # Bootloader.
