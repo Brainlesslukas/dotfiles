@@ -6,5 +6,6 @@
     ./home.nix
     ./nh.nix
     ./stylix.nix
+    ./vicinae.nix
   ];
 }

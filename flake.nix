@@ -11,6 +11,10 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vicinae = {
+      url = "github:vicinaehq/vicinae";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -19,6 +23,7 @@
       nixpkgs,
       home-manager,
       stylix,
+      vicinae
     }:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -28,6 +33,13 @@
           ./hardware-configuration.nix
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
+          {
+            home-manager.users.lukas = {
+              imports = [
+                vicinae.homeManagerModules.default
+              ];
+            };
+          }
         ];
       };
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
