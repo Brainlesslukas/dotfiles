@@ -19,10 +19,11 @@
           };
         };
         bar.clock.format = "%H:%M";
-        bar.clock.icon = false;
+        bar.clock.icon = "";
         bar.launcher.autoDetectIcon = true;
         bar.workspaces.workspaces = 2;
         menus.clock.time.military = true;
+        theme.bar.border.location = "bottom";
       };
     };
   };
