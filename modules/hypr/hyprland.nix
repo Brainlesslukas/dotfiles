@@ -28,14 +28,14 @@
         };
 
         general = {
-          gaps_in = 4;
-          gaps_out = 10;
+          gaps_in = 8;
+          gaps_out = "22, 42, 22, 42";
 
-          border_size = 0;
+          border_size = 2;
 
           resize_on_border = false;
 
-          #col.inactive_border = "rgba(00000000)";
+          #"col.inactive_border" = "rgba(69, 133, 136, 1)";
           #col.active_border = "rgba(00000000)";
 
           allow_tearing = false;
@@ -54,7 +54,7 @@
             enabled = false;
             range = 4;
             render_power = 3;
-            #color = "rgba(1a1a1aee)";
+            #color = "rgba(69, 133, 136, 1)";
           };
 
           blur = {
