@@ -9,6 +9,6 @@
     ./vicinae.nix
     ./spicetify.nix
     ./zen-browser.nix
-    ./tty-clock.nix
+    ./yazi.nix
   ];
 }

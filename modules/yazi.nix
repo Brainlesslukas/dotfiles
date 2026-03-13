@@ -2,9 +2,8 @@
 
 {
   home-manager.users.lukas = {
-    programs.tty-clock = {
-      enable = true;
+    services.yazi = {
+      enable = true;    
     };
   };
 }
-

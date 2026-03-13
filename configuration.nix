@@ -102,6 +102,7 @@
     tirith
     nixfmt-tree
     vesktop
+    tty-clock
   ];
 
   nix = {
