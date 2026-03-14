@@ -10,5 +10,6 @@
     ./spicetify.nix
     ./zen-browser.nix
     ./yazi.nix
+    ./ollama.nix
   ];
 }

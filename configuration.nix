@@ -103,6 +103,7 @@
     nixfmt-tree
     vesktop
     tty-clock
+    nodejs
   ];
 
   nix = {

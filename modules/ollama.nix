@@ -2,8 +2,8 @@
 
 {
   home-manager.users.lukas = {
-    programs.yazi = {
-      enable = true;    
+    services.ollama = {
+      enable = true;
     };
   };
 }

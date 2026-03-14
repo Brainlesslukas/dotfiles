@@ -60,6 +60,8 @@ in
         POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
         eval "$(tirith init --shell zsh)"
         eval "$(zoxide init --cmd cd zsh)"
+
+        export PATH="$HOME/.npm-global/bin:$PATH"
       '';
     };
   };
