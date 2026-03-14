@@ -3,7 +3,7 @@
 {
   home-manager.users.lukas = {
     programs.yazi = {
-      enable = true;    
+      enable = true;
     };
   };
 }

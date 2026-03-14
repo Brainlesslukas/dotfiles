@@ -46,6 +46,9 @@
           inputs.stylix.nixosModules.stylix
           inputs.spicetify-nix.nixosModules.default
           {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            nixpkgs.config.allowUnfree = true;
             home-manager.users.lukas = {
               imports = [
                 inputs.vicinae.homeManagerModules.default
