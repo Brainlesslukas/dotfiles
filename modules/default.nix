@@ -11,5 +11,6 @@
     ./zen-browser.nix
     ./yazi.nix
     ./ollama.nix
+    ./claude.nix
   ];
 }
