@@ -13,6 +13,7 @@
     # Available schemes: https://github.com/tinted-theming/schemes
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
+
     # Cursor theme configuration
     cursor = {
       package = pkgs.bibata-cursors;

@@ -32,6 +32,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.firewall.checkReversePath = false;
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -104,6 +105,11 @@
     vesktop
     tty-clock
     nodejs
+    docker
+    bat
+    pipes
+    wireguard-tools
+    protonvpn-gui
   ];
 
   nix = {

@@ -10,6 +10,9 @@
           email = "info@brainlesslukas.com";
         };
       };
+      extraConfig = {
+        push.autoSetupRemote = true;
+      };
     };
   };
 }

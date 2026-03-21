@@ -23,6 +23,9 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    opencode = {
+      url = "github:GutMutCode/opencode-nix";
+    };
   };
 
   outputs =
@@ -45,16 +48,18 @@
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           inputs.spicetify-nix.nixosModules.default
-          {
+          ({ pkgs, ... }: {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             nixpkgs.config.allowUnfree = true;
+            nixpkgs.overlays = [ inputs.opencode.overlays.default ];
             home-manager.users.lukas = {
+              home.packages = [ pkgs.opencode ];
               imports = [
                 inputs.vicinae.homeManagerModules.default
               ];
             };
-          }
+          })
         ];
       };
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
