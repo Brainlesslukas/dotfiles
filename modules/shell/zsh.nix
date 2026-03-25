@@ -51,6 +51,8 @@ in
         eval "$(zoxide init --cmd cd zsh)"
 
         export PATH="$HOME/.npm-global/bin:$PATH"
+        export GOPATH=$HOME/go
+        export PATH=$PATH:$GOPATH/bin
       '';
     };
   };

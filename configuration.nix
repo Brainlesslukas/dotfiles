@@ -110,6 +110,16 @@
     pipes
     wireguard-tools
     protonvpn-gui
+    go
+    gcc
+    gnumake
+    binutils
+    gopls        
+    gotools      
+    revive         
+    delve          
+    veracrypt
+    arduino
   ];
 
   nix = {

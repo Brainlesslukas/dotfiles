@@ -12,5 +12,6 @@
     ./yazi.nix
     ./ollama.nix
     ./claude.nix
+    ./bab.nix
   ];
 }
