@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 let
-  bab = pkgs.callPackage /home/lukas/development/bab/default.nix {};
+  bab-pkgs = pkgs.callPackage inputs.bab-repo {};
 in
 {
   environment.systemPackages = [
-    bab
+    bab-pkgs.bab
   ];
 }

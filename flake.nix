@@ -26,6 +26,9 @@
     opencode = {
       url = "github:GutMutCode/opencode-nix";
     };
+    bab-repo = {
+      url = "git+file:///home/lukas/development/bab-nixos";
+    };
   };
 
   outputs =

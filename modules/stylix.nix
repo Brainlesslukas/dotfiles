@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }:
 
@@ -29,12 +30,12 @@
         name = "Noto Color Emoji";
       };
       monospace = {
-        package = pkgs.nerd-fonts.fira-code;
-        name = "Fira Code Mono";
+        package = pkgs.nerd-fonts.geist-mono;
+        name = "Geist Mono";
       };
       sansSerif = {
-        package = pkgs.fira-code;
-        name = "Fira Code";
+        package = pkgs.geist-font;
+        name = "Geist";
       };
       # Use same font for serif as sans-serif for consistency
       serif = config.stylix.fonts.sansSerif;
@@ -57,6 +58,8 @@
   # User-level Stylix configuration (via Home Manager)
   home-manager.users.lukas = {
     stylix = {
+      targets.firefox.profileNames = [ "" ];
+      targets.firefox.fonts.enable = lib.mkForce false;
       # Icon theme configuration
       icons = {
         enable = true;

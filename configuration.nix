@@ -57,6 +57,8 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
+  programs.nix-ld.enable = true;
+
   environment.variables = {
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";
@@ -119,7 +121,13 @@
     revive         
     delve          
     veracrypt
-    arduino
+    arduino-ide
+    vscode
+    python3
+    (python3.withPackages (python-pkgs: with python-pkgs; [
+      pip
+      pyserial
+    ]))
   ];
 
   nix = {
