@@ -101,11 +101,6 @@
         pipes
         wireguard-tools
         protonvpn-gui
-        gcc
-        gnumake
-        binutils
-        veracrypt
-        arduino-ide
         vscode
         nmap
       ];
