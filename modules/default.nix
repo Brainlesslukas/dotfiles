@@ -5,6 +5,7 @@
       self.nixosModules.modulesApp
       self.nixosModules.modulesDesktop
       self.nixosModules.modulesShell
+      self.nixosModules.modulesSecurity
     ];
   };
 }
