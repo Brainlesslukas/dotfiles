@@ -102,7 +102,6 @@
         pipes
         wireguard-tools
         protonvpn-gui
-        go
         gcc
         gnumake
         binutils
@@ -113,15 +112,13 @@
         veracrypt
         arduino-ide
         vscode
-        python3
         nmap
-        (python3.withPackages (
-          python-pkgs: with python-pkgs; [
-            pip
-            pyserial
-          ]
-        ))
       ];
+
+      programs.direnv = {
+        enable = true;
+        nix-direnv.enable = true;
+      };
 
       nix = {
         package = pkgs.nixVersions.latest;
