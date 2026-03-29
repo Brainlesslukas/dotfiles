@@ -54,10 +54,6 @@
             source ~/.config/zsh/.p10k.zsh
             POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
             eval "$(zoxide init --cmd cd zsh)"
-
-            export PATH="$HOME/.npm-global/bin:$PATH"
-            export GOPATH=$HOME/go
-            export PATH=$PATH:$GOPATH/bin
           '';
         };
       };
