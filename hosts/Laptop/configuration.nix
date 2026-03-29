@@ -94,7 +94,6 @@
         firefox
         zoxide
         tirith
-        nixfmt-tree
         vesktop
         tty-clock
         nodejs
