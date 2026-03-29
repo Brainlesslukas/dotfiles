@@ -1,16 +1,10 @@
+{ self, ... }:
 {
-  imports = [
-    ./fastfetch.nix
-    ./ghostty.nix
-    ./git.nix
-    ./home.nix
-    ./nh.nix
-    ./stylix.nix
-    ./vicinae.nix
-    ./spicetify.nix
-    ./zen-browser.nix
-    ./yazi.nix
-    ./ollama.nix
-    ./claude.nix
-  ];
+  flake.nixosModules.modules = {
+    imports = [
+      self.nixosModules.modulesApp
+      self.nixosModules.modulesDesktop
+      self.nixosModules.modulesShell
+    ];
+  };
 }
