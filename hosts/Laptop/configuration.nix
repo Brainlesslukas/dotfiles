@@ -104,8 +104,6 @@
         gcc
         gnumake
         binutils
-        revive
-        delve
         veracrypt
         arduino-ide
         vscode
