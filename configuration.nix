@@ -84,6 +84,7 @@
       extraGroups = [
         "networkmanager"
         "wheel"
+        "docker"
       ];
       shell = pkgs.zsh;
       packages = with pkgs; [ ];
@@ -107,7 +108,6 @@
     vesktop
     tty-clock
     nodejs
-    docker
     bat
     pipes
     wireguard-tools
@@ -124,6 +124,7 @@
     arduino-ide
     vscode
     python3
+    nmap
     (python3.withPackages (python-pkgs: with python-pkgs; [
       pip
       pyserial
@@ -142,6 +143,7 @@
   };
 
   programs.hyprland.enable = true;
+  virtualisation.docker.enable = true;
 
   services.logind.settings.Login.HandleLidSwitch = "ignore";
 
