@@ -90,10 +90,8 @@
       environment.systemPackages = with pkgs; [
         neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         wget
-        teamspeak6-client
         zoxide
         tirith
-        vesktop
         tty-clock
         nodejs
         bat

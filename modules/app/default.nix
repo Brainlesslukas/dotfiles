@@ -7,6 +7,7 @@
       self.nixosModules.modulesAppSpicetify
       self.nixosModules.modulesAppVicinae
       self.nixosModules.modulesAppBrowsing
+      self.nixosModules.modulesAppCommunication
     ];
   };
 }
