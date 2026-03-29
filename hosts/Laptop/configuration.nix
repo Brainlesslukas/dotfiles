@@ -99,7 +99,6 @@
         bat
         pipes
         wireguard-tools
-        protonvpn-gui
         vscode
         nmap
       ];
