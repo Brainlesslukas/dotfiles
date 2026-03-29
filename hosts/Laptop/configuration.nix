@@ -97,7 +97,6 @@
         bat
         pipes
         wireguard-tools
-        vscode
         nmap
       ];
 
