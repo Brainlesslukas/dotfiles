@@ -1,7 +1,7 @@
 { self, inputs, ... }:
 {
 
-  flake.nixosModules.modulesAppZenbrowser =
+  flake.nixosModules.modulesAppBrowsingZenbrowser =
     { pkgs, ... }:
 
     {

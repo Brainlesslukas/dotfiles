@@ -6,7 +6,7 @@
       self.nixosModules.modulesAppGit
       self.nixosModules.modulesAppSpicetify
       self.nixosModules.modulesAppVicinae
-      self.nixosModules.modulesAppZenbrowser
+      self.nixosModules.modulesAppBrowsing
     ];
   };
 }
