@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.nixosModules.modulesSecurityAuth =
+  flake.nixosModules.modulesSecurityEncryption =
     { pkgs, ... }:
     {
       environment.systemPackages = [
