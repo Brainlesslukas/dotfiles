@@ -104,8 +104,6 @@
         gcc
         gnumake
         binutils
-        gopls
-        gotools
         revive
         delve
         veracrypt
