@@ -3,7 +3,10 @@
   flake.nixosModules.modulesShell = {
     imports = [
       self.nixosModules.modulesShellZsh
-      self.nixosModules.modulesShellBat
     ];
+    environment.systemPackages = with pkgs; [
+      bat
+      zoxide
+    ]
   };
 }
