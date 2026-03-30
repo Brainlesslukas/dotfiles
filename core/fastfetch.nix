@@ -12,7 +12,7 @@
           settings = {
             logo = {
               type = "kitty-direct";
-              source = "~/Wallpaper/nix-snowflake.png";
+              source = "~/dotfiles/assets/logo/nix-snowflake.png";
               width = 18;
               height = 8;
               padding.top = 1;
