@@ -15,7 +15,10 @@
       imports = [ inputs.home-manager.nixosModules.home-manager ];
       programs.zsh.enable = true;
       environment.shells = with pkgs; [ zsh ];
-      environment.systemPackages = with pkgs; [ zsh-autocomplete ];
+      environment.systemPackages = with pkgs; [
+        zsh-autocomplete
+        fzf
+      ];
 
       home-manager.users.lukas = {
         programs.zsh = {
@@ -54,6 +57,7 @@
             source ~/.config/zsh/.p10k.zsh
             POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
             eval "$(zoxide init --cmd cd zsh)"
+            source <(fzf --zsh) 
           '';
         };
       };
