@@ -90,8 +90,6 @@
       environment.systemPackages = with pkgs; [
         wget
         zoxide
-        tty-clock
-        bat
         pipes
         wireguard-tools
         nmap

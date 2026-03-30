@@ -3,6 +3,7 @@
   flake.nixosModules.coreProgramsUtils = {
     imports = [
       self.nixosModules.coreProgramsUtilsNeovim
+      self.nixosModules.coreProgramsUtilsTtyclock
     ];
   };
 }
