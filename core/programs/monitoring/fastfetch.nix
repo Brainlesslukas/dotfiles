@@ -1,7 +1,7 @@
 { self, inputs, ... }:
 {
 
-  flake.nixosModules.coreFastfetch =
+  flake.nixosModules.coreProgramsMonitoringFastfetch =
     { pkgs, ... }:
 
     {
@@ -12,7 +12,7 @@
           settings = {
             logo = {
               type = "kitty-direct";
-              source = "~/dotfiles/assets/logo/nix-snowflake.png";
+              source = "~/Wallpaper/nix-snowflake.png";
               width = 18;
               height = 8;
               padding.top = 1;
