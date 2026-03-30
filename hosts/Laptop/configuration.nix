@@ -82,14 +82,6 @@
         defaultUserShell = pkgs.zsh;
       };
 
-      # Allow unfree packages
-      nixpkgs.config.allowUnfree = true;
-
-      environment.systemPackages = with pkgs; [
-        wireguard-tools
-        nmap
-      ];
-
       programs.direnv = {
         enable = true;
         nix-direnv.enable = true;
