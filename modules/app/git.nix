@@ -10,10 +10,10 @@
         programs.git = {
           enable = true;
           settings = {
+            push.autoSetupRemote = true;
             user = {
               name = "Lukas";
               email = "info@brainlesslukas.com";
-              push.autoSetupRemote = true;
             };
           };
         };
