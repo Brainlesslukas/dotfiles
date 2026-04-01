@@ -18,6 +18,7 @@
                 ];
                 middle = [ "media" ];
                 right = [
+                  "cava"
                   "clock"
                   "notifications"
                 ];
