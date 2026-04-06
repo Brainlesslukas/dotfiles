@@ -15,7 +15,7 @@
             wallpaper = [
               {
                 monitor = "";
-                path = "~/dotfiles/assets/wallpapers/gruvbox-nix.png";
+                path = "~/Wallpaper/gruvbox-nix.png";
                 fit_mode = "cover";
               }
             ];
