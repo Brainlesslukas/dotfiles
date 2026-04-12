@@ -5,6 +5,7 @@
       self.nixosModules.coreProgramsMonitoringFastfetch
       self.nixosModules.coreProgramsMonitoringBtop
       self.nixosModules.coreProgramsMonitoringResources
+      self.nixosModules.coreProgramsMonitoringWireshark
     ];
   };
 }

@@ -75,6 +75,7 @@
             "networkmanager"
             "wheel"
             "docker"
+            "wireshark"
           ];
           shell = pkgs.zsh;
           packages = with pkgs; [ ];

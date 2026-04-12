@@ -6,6 +6,9 @@
 
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
+      environment.systemPackages = [
+        pkgs.github-desktop
+      ];
       home-manager.users.lukas = {
         programs.git = {
           enable = true;

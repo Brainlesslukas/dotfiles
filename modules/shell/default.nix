@@ -10,6 +10,7 @@
         bat
         zoxide
         unzip
+        gcc
       ];
     };
 }
