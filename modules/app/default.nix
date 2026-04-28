@@ -12,6 +12,7 @@
       self.nixosModules.modulesAppAi
       self.nixosModules.modulesAppIllustartion
       self.nixosModules.modulesAppDevelopment
+      self.nixosModules.modulesAppObsidian
     ];
   };
 }
