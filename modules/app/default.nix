@@ -10,9 +10,9 @@
       self.nixosModules.modulesAppCommunication
       self.nixosModules.modulesAppSpicetify
       self.nixosModules.modulesAppAi
-      self.nixosModules.modulesAppIllustartion
       self.nixosModules.modulesAppDevelopment
       self.nixosModules.modulesAppObsidian
+      self.nixosModules.modulesAppRclone
     ];
   };
 }
