@@ -10,8 +10,33 @@
     }:
     {
       # Bootloader.
-      boot.loader.systemd-boot.enable = true;
-      boot.loader.efi.canTouchEfiVariables = true;
+      boot = {
+        loader = {
+          grub = {
+            enable = true;
+            device = "nodev";
+            efiSupport = true;
+          };
+          efi.canTouchEfiVariables = true;
+        };
+        consoleLogLevel = 3;
+        initrd.verbose = false;
+        initrd.systemd.enable = true;
+        initrd.kernelModules = [
+          "i915"
+        ];
+        kernelParams = [
+          "quiet"
+          "splash"
+          "video=HDMI-A-1:e"
+          "video=eDP-1:1920x1080"
+          "intremap=on"
+          "boot.shell_on_fail"
+          "udev.log_priority=3"
+          "rd.systemd.show_status=auto"
+        ];
+        plymouth.enable = true;
+      };
 
       boot.kernelPackages = pkgs.linuxPackages_latest;
 
