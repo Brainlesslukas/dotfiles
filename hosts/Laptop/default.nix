@@ -6,6 +6,7 @@
       self.nixosModules.LaptopHardwareConfig
       self.nixosModules.core
       self.nixosModules.modules
+      self.nixosModules.hostsCommon
     ];
   };
 }
