@@ -2,7 +2,6 @@
 {
   flake.nixosModules.core = {
     imports = [
-      self.nixosModules.coreHome
       self.nixosModules.coreProgramsUtils
       self.nixosModules.coreProgramsMonitoring
       self.nixosModules.coreBoot

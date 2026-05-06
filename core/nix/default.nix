@@ -1,8 +1,14 @@
-{ self, ... }:
+{ self, inputs, ... }:
 {
   flake.nixosModules.coreNix =
     { pkgs, ... }:
     {
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
+
+      home-manager.users.lukas = {
+        home.stateVersion = "24.11";
+      };
+
       system = {
         stateVersion = "25.11";
         systemBuilderCommands = ''
