@@ -9,7 +9,7 @@
       ...
     }:
     {
-      networking.hostName = "Laptop"; # Define your hostname.
+      networking.hostName = config.userOptions.hostName; # Define your hostname.
       # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
       # Configure network proxy if necessary
@@ -24,23 +24,6 @@
         "nix-command"
         "flakes"
       ];
-
-      # Define a user account. Don't forget to set a password with ‘passwd’.
-      users = {
-        users.lukas = {
-          isNormalUser = true;
-          description = "Lukas";
-          extraGroups = [
-            "networkmanager"
-            "wheel"
-            "docker"
-            "wireshark"
-          ];
-          shell = pkgs.zsh;
-          packages = with pkgs; [ ];
-        };
-        defaultUserShell = pkgs.zsh;
-      };
 
       programs.direnv = {
         enable = true;

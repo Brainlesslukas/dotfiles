@@ -35,6 +35,7 @@
           (inputs.import-tree ./modules)
           (inputs.import-tree ./core)
           (inputs.import-tree ./assets)
+          (inputs.import-tree ./users)
         ];
       }
     );
