@@ -12,7 +12,6 @@
           isNormalUser = true;
           extraGroups = [
             "wheel"
-            "wireshark"
           ];
           shell = pkgs.zsh;
         };
