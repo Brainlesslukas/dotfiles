@@ -6,6 +6,7 @@
       self.nixosModules.coreProgramsUtilsTtyclock
       self.nixosModules.coreProgramsUtilsPipes
       self.nixosModules.coreProgramsUtilsCava
+      self.nixosModules.coreProgramsUtilsRipgrep
     ];
   };
 }
