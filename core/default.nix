@@ -8,6 +8,7 @@
       self.nixosModules.coreProgramsMonitoring
       self.nixosModules.coreBoot
       self.nixosModules.coreUser
+      self.nixosModules.coreHardware
     ];
   };
 }

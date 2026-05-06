@@ -11,7 +11,6 @@
           initialPassword = "secure123";
           isNormalUser = true;
           extraGroups = [
-            "networkmanager"
             "wheel"
             "docker"
             "wireshark"
