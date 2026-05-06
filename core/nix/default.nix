@@ -20,11 +20,15 @@
       };
 
       programs = {
-        nix-ld.enable = true;
+        nh = {
+          enable = true;
+          flake = "/home/lukas/dotfiles";
+        };
         direnv = {
           enable = true;
           nix-direnv.enable = true;
         };
+        nix-ld.enable = true;
       };
     };
 }
