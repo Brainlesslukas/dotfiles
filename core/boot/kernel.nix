@@ -30,7 +30,7 @@
           ];
         };
         consoleLogLevel = 3;
-        kernelPackages = pkgs.linuxPackages_latest;
+        kernelPackages = pkgs.linuxPackages_zen;
       };
     };
 }
