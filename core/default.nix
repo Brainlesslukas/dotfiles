@@ -9,6 +9,7 @@
       self.nixosModules.coreBoot
       self.nixosModules.coreUser
       self.nixosModules.coreHardware
+      self.nixosModules.coreNix
     ];
   };
 }
