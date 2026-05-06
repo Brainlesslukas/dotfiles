@@ -1,6 +1,6 @@
 { self, ... }:
 {
-  flake.nixosModules.hostsCommonUserOptions =
+  flake.nixosModules.hostsLaptopModulesUserOptions =
     { config, ... }:
     {
       config.userOptions = {

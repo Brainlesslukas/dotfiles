@@ -1,10 +1,13 @@
 { self, ... }:
 {
   flake.nixosModules.usersLukas =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
+    let
+      inherit (config.userOptions) userName;
+    in
     {
       users = {
-        users.lukas = {
+        users.${userName} = {
           initialPassword = "secure123";
           isNormalUser = true;
           extraGroups = [

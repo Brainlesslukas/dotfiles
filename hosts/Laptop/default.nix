@@ -8,6 +8,7 @@
       self.nixosModules.modules
       self.nixosModules.hostsCommon
       self.nixosModules.usersLukas
+      self.nixosModules.hostsLaptopModules
     ];
   };
 }
