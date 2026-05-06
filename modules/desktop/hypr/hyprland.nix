@@ -6,6 +6,15 @@
 
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
+      programs.hyprland.enable = true;
+      environment.variables = {
+        XDG_CURRENT_DESKTOP = "Hyprland";
+        XDG_SESSION_DESKTOP = "Hyprland";
+        GTK_USE_PORTAL = "1";
+        GDK_BACKEND = "wayland,x11";
+        QT_QPA_PLATFORM = "wayland";
+      };
+
       home-manager.users.lukas = {
         wayland.windowManager.hyprland = {
           enable = true;
