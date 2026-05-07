@@ -1,6 +1,6 @@
 { self, ... }:
 {
   flake.nixosModules.coreServicesPowerProfiles = {
-    services.power-profiles-daemon.enable
+    services.power-profiles-daemon.enable = true;
   };
 }
