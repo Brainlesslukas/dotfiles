@@ -25,7 +25,7 @@
               contentPadding = 8;
               marginVertical = 12;
               marginHorizontal = 20;
-              middleCliclCommand = "settings";
+              middleClickCommand = "settings";
               widgets = {
                 left = [
                   {
@@ -66,7 +66,6 @@
                     formatHorizontal = "HH:mm";
                     formatVertical = "HH mm";
                     useMonospacedFont = true;
-                    usePrimaryColor = true;
                   }
                   {
                     id = "NotificationHistory";
