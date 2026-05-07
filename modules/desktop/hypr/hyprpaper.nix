@@ -10,12 +10,12 @@
         services.hyprpaper = {
           enable = true;
           settings = {
-            preload = [ "~/dotfiles/assets/wallpapers/gruvbox-nix.png" ];
+            preload = [ "~/dotfiles/assets/wallpapers/everblush.jpg" ];
             splash = false;
             wallpaper = [
               {
                 monitor = "";
-                path = "~/Wallpaper/gruvbox-nix.png";
+                path = "~/dotfiles/assets/wallpapers/everblush.jpg";
                 fit_mode = "cover";
               }
             ];

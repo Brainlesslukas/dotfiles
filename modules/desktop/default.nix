@@ -4,6 +4,7 @@
     imports = [
       self.nixosModules.modulesDesktopHypr
       self.nixosModules.modulesDesktopStylix
+      self.nixosModules.modulesDesktopNoctalia
     ];
   };
 }

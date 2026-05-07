@@ -20,12 +20,13 @@
           enable = true;
           settings = {
             monitor = [
-              "eDP-1, disable" # 1980x1080@60, 0x0, 1"
+              "eDP-1, disable" # 1920x1080@60, 0x0, 1"
               "HDMI-A, 3440x1440@100, 0x0, 1"
             ];
 
             exec-once = [
               #"ghostty"
+              "noctalia-shell"
             ];
 
             input = {
