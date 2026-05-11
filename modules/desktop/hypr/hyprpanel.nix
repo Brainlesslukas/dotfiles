@@ -2,11 +2,14 @@
 {
 
   flake.nixosModules.modulesDesktopHyprHyprpanel =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
+    let
+      inherit (config.userOptions) userName;
+    in
 
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
-      home-manager.users.lukas = {
+      home-manager.users.${userName} = {
         programs.hyprpanel = {
           enable = false;
           settings = {

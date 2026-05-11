@@ -2,14 +2,17 @@
 {
 
   flake.nixosModules.modulesAppGit =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
+    let
+      inherit (config.userOptions) userName;
+    in
 
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
       environment.systemPackages = [
         pkgs.github-desktop
       ];
-      home-manager.users.lukas = {
+      home-manager.users.${userName} = {
         programs.git = {
           enable = true;
           settings = {

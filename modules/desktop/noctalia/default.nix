@@ -1,9 +1,12 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.modulesDesktopNoctalia =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
+    let
+      inherit (config.userOptions) userName;
+    in
     {
-      home-manager.users.lukas = {
+      home-manager.users.${userName} = {
         imports = [
           inputs.noctalia.homeModules.default
         ];
@@ -18,6 +21,7 @@
           enable = true;
 
           settings = {
+            settingsVersion = 59;
             bar = {
               density = "comfortable";
               barType = "floating";

@@ -7,7 +7,9 @@
       lib,
       ...
     }:
-
+    let
+      inherit (config.userOptions) userName;
+    in
     {
       imports = [
         inputs.home-manager.nixosModules.home-manager
@@ -63,7 +65,7 @@
       };
 
       # User-level Stylix configuration (via Home Manager)
-      home-manager.users.lukas = {
+      home-manager.users.${userName} = {
         stylix = {
           targets.firefox.profileNames = [ "" ];
           targets.firefox.fonts.enable = lib.mkForce false;

@@ -10,6 +10,7 @@
     }:
     let
       myAliases = self.lib.commonAliases;
+      inherit (config.userOptions) userName;
     in
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
@@ -20,7 +21,7 @@
         fzf
       ];
 
-      home-manager.users.lukas = {
+      home-manager.users.${userName} = {
         programs.zsh = {
           enable = true;
           autosuggestion.enable = true;

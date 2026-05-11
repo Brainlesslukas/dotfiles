@@ -1,12 +1,15 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.modulesAppRclone =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
+    let
+      inherit (config.userOptions) userName;
+    in
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
       environment.systemPackages = with pkgs; [ rclone ];
 
-      home-manager.users.lukas = {
+      home-manager.users.${userName} = {
         systemd.user.services.mount-cloud =
           let
             mountDir = "/home/lukas/Cloud";

@@ -2,7 +2,10 @@
 {
 
   flake.nixosModules.modulesDesktopHyprHyprland =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
+    let
+      inherit (config.userOptions) userName;
+    in
 
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
@@ -15,7 +18,7 @@
         QT_QPA_PLATFORM = "wayland";
       };
 
-      home-manager.users.lukas = {
+      home-manager.users.${userName} = {
         wayland.windowManager.hyprland = {
           enable = true;
           settings = {

@@ -1,11 +1,14 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.coreNix =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
+    let
+      inherit (config.userOptions) userName;
+    in
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-      home-manager.users.lukas = {
+      home-manager.users.${userName} = {
         home.stateVersion = "24.11";
       };
 
