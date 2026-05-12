@@ -46,8 +46,8 @@
             };
 
             general = {
-              gaps_in = 8;
-              gaps_out = "22, 42, 22, 42";
+              gaps_in = 4;
+              gaps_out = "16, 21, 12, 21";
 
               border_size = 2;
 
