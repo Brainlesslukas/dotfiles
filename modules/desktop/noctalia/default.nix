@@ -21,7 +21,7 @@
           enable = true;
 
           settings = {
-            settingsVersion = 59;
+            settingsVersion = 63;
             bar = {
               density = "comfortable";
               barType = "floating";
@@ -29,7 +29,6 @@
               contentPadding = 8;
               marginVertical = 12;
               marginHorizontal = 20;
-              middleClickCommand = "settings";
               widgets = {
                 left = [
                   {
@@ -78,6 +77,7 @@
               };
             };
             general = {
+              enableShadows = false;
               scaleRatio = 0.9;
             };
             dock = {
