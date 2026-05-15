@@ -12,6 +12,7 @@
           isNormalUser = true;
           extraGroups = [
             "wheel"
+            "dialout"
           ];
           shell = pkgs.zsh;
         };
