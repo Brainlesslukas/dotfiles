@@ -10,6 +10,8 @@
         bat
         zoxide
         unzip
+        statix
+        eza
         gcc
       ];
     };
