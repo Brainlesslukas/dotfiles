@@ -31,7 +31,7 @@
       programs = {
         nh = {
           enable = true;
-          flake = "/home/lukas/dotfiles";
+          flake = "/home/${userName}/dotfiles";
         };
         direnv = {
           enable = true;

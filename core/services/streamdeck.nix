@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, inputs, ... }:
 {
   flake.nixosModules.coreServicesStreamdeck =
     { pkgs, ... }:
@@ -13,9 +13,8 @@
         wantedBy = [ "graphical-session.target" ];
         path = with pkgs; [
           direnv
+          bash
           nix
-          git
-          wireplumber
         ];
 
         serviceConfig = {

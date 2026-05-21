@@ -4,7 +4,7 @@
   flake.nixosModules.modulesDesktopHyprHyprpaper =
     { pkgs, config, ... }:
     let
-      inherit (config.userOptions) userName;
+      inherit (config.userOptions) userName wallpaper;
     in
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
@@ -12,12 +12,12 @@
         services.hyprpaper = {
           enable = true;
           settings = {
-            preload = [ "~/dotfiles/assets/wallpapers/everblush.jpg" ];
+            preload = [ "~/dotfiles/assets/wallpapers/${wallpaper}" ];
             splash = false;
             wallpaper = [
               {
                 monitor = "";
-                path = "~/dotfiles/assets/wallpapers/everblush.jpg";
+                path = "~/dotfiles/assets/wallpapers/${wallpaper}";
                 fit_mode = "cover";
               }
             ];

@@ -12,7 +12,7 @@
       home-manager.users.${userName} = {
         systemd.user.services.mount-cloud =
           let
-            mountDir = "/home/lukas/Cloud";
+            mountDir = "/home/${userName}/Cloud";
           in
           {
             Unit = {

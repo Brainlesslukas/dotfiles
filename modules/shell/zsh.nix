@@ -26,7 +26,7 @@
           enable = true;
           autosuggestion.enable = true;
           autosuggestion.strategy = [ "completion" ];
-          dotDir = "/home/lukas/.config/zsh";
+          dotDir = "/home/${userName}/.config/zsh";
           enableCompletion = false;
           syntaxHighlighting.enable = true;
           shellAliases = myAliases;

@@ -3,7 +3,7 @@
   flake.nixosModules.modulesDesktopNoctalia =
     { pkgs, config, ... }:
     let
-      inherit (config.userOptions) userName;
+      inherit (config.userOptions) userName wallpaper;
     in
     {
       home-manager.users.${userName} = {
@@ -13,7 +13,7 @@
 
         home.file.".cache/noctalia/wallpapers.json" = {
           text = builtins.toJSON {
-            defaultWallpaper = "/home/lukas/dotfiles/assets/wallpapers/everblush.jpg";
+            defaultWallpaper = "/home/${userName}/dotfiles/assets/wallpapers/${wallpaper}";
           };
         };
 
