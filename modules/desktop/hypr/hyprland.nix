@@ -5,6 +5,14 @@
     { pkgs, config, ... }:
     let
       inherit (config.userOptions) userName;
+
+      monitorLine =
+        m:
+        let
+          res = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
+          pos = "${toString m.x}x${toString m.y}";
+        in
+        if m.enabled then "${m.name}, ${res}, ${pos}, 1" else "${m.name}, disable";
     in
 
     {
@@ -22,10 +30,7 @@
         wayland.windowManager.hyprland = {
           enable = true;
           settings = {
-            monitor = [
-              "eDP-1, disable" # 1920x1080@60, 0x0, 1"
-              "HDMI-A, 3440x1440@100, 0x0, 1"
-            ];
+            monitor = map monitorLine config.monitors;
 
             exec-once = [
               #"ghostty"
