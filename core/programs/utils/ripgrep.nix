@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   flake.nixosModules.coreProgramsUtilsRipgrep =
     { pkgs, ... }:
     {
