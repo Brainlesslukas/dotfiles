@@ -4,7 +4,7 @@
     { config, ... }:
     {
       config.userOptions = {
-        hostName = "Dekstop";
+        hostName = "Desktop";
         userName = "lukas";
         wallpaper = "sunset-forest-light.jpg";
       };

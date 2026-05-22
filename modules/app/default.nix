@@ -13,6 +13,7 @@
       self.nixosModules.modulesAppDevelopment
       self.nixosModules.modulesAppObsidian
       self.nixosModules.modulesAppRclone
+      self.nixosModules.modulesAppGaming
     ];
   };
 }
