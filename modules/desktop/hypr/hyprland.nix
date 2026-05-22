@@ -129,6 +129,7 @@
               "$mainMod, TAB, workspace, previous"
               "$mainMod, P, pseudo," # dwindle
               "$mainMod, J, togglesplit," # dwindle
+              "$mainMod, F, fullscreen, 0" 
               #$mainMod, S, exec, hyprshot -m region
 
               "$mainMod, left, movefocus, l"
