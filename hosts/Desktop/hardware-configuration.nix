@@ -2,64 +2,46 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 
-{ self, inputs, ... }:
+{self, inputs, ... }:
 {
+flake.nixosModules.DesktopHardwareConfig = 
+{ config, lib, pkgs, modulesPath, ... }:
 
-  flake.nixosModules.DesktopHardwareConfig =
-    {
-      config,
-      lib,
-      pkgs,
-      modulesPath,
-      ...
-    }:
+{
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-    {
-      imports = [
-        (modulesPath + "/installer/scan/not-detected.nix")
-      ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
 
-      boot.initrd.availableKernelModules = [
-        "xhci_pci"
-        "ahci"
-        "nvme"
-        "usb_storage"
-        "sd_mod"
-        "sdhci_pci"
-      ];
-      boot.initrd.kernelModules = [ ];
-      boot.kernelModules = [ "kvm-intel" ];
-      boot.extraModulePackages = [ ];
-
-      fileSystems."/" = {
-        device = "/dev/mapper/luks-bbacc5d2-7422-460a-9e9d-6bf0799a503c";
-        fsType = "btrfs";
-        options = [ "subvol=@" ];
-      };
-
-      boot.initrd.luks.devices."luks-bbacc5d2-7422-460a-9e9d-6bf0799a503c".device =
-        "/dev/disk/by-uuid/bbacc5d2-7422-460a-9e9d-6bf0799a503c";
-
-      fileSystems."/home" = {
-        device = "/dev/mapper/luks-bbacc5d2-7422-460a-9e9d-6bf0799a503c";
-        fsType = "btrfs";
-        options = [ "subvol=@home" ];
-      };
-
-      fileSystems."/boot" = {
-        device = "/dev/disk/by-uuid/3CEE-047F";
-        fsType = "vfat";
-        options = [
-          "fmask=0077"
-          "dmask=0077"
-        ];
-      };
-
-      swapDevices = [
-        { device = "/dev/disk/by-uuid/4809b18b-a646-4c75-9a59-8eb551cc9fca"; }
-      ];
-
-      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-      hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  fileSystems."/" =
+    { device = "/dev/mapper/luks-4f041144-06e5-4d71-8c4e-6438a17e6197";
+      fsType = "btrfs";
+      options = [ "subvol=@" ];
     };
+
+  boot.initrd.luks.devices."luks-4f041144-06e5-4d71-8c4e-6438a17e6197".device = "/dev/disk/by-uuid/4f041144-06e5-4d71-8c4e-6438a17e6197";
+
+  fileSystems."/home" =
+    { device = "/dev/mapper/luks-4f041144-06e5-4d71-8c4e-6438a17e6197";
+      fsType = "btrfs";
+      options = [ "subvol=@home" ];
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/854D-3021";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/5fe825a9-713a-4a09-9882-618a2d4df0ba"; }
+    ];
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+};
 }

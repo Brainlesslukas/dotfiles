@@ -6,7 +6,7 @@
     {
       nixpkgs.config.allowUnfree = true;
       environment.systemPackages = with pkgs; [
-        teamspeak6-client
+#        teamspeak6-client
       ];
     };
 }
