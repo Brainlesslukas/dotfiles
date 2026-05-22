@@ -1,7 +1,7 @@
 { self, ... }:
 {
 
-  flake.nixosModules.modulesAppBrowsingFirefox =
+  flake.nixosModules.modulesAppBrowsingChromium =
     {
       pkgs,
       lib,
@@ -12,15 +12,14 @@
       inherit (lib) mkEnableOption mkIf;
     in
     {
-      options.programs.browsing.firefox = {
-        enable = mkEnableOption "Firefox Browser";
+      options.programs.browsing.chromium = {
+        enable = mkEnableOption "Chromium Browser";
       };
 
-      config = mkIf config.programs.browsing.firefox.enable {
+      config = mkIf config.programs.browsing.chromium.enable {
         environment.systemPackages = with pkgs; [
-          firefox
+          chromium
         ];
       };
-
     };
 }
