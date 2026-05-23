@@ -20,6 +20,7 @@
       };
 
       config = mkIf config.programs.media.enable {
+        environment.systemPackages = [ pkgs.vlc ];
         programs.spicetify = {
           enable = true;
         };
