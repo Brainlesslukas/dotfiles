@@ -2,21 +2,33 @@
 {
 
   flake.nixosModules.modulesAppCommunication =
-    { pkgs, config, ... }:
+    {
+      pkgs,
+      config,
+      lib,
+      ...
+    }:
     let
       inherit (config.userOptions) userName;
+      inherit (lib) mkEnableOption mkIf;
     in
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-      nixpkgs.config.allowUnfree = true;
-      environment.systemPackages = with pkgs; [
-        teamspeak6-client
-      ];
+      options.programs.communication = {
+        enable = mkEnableOption "Enables communication modules";
+      };
 
-      home-manager.users.${userName} = {
-        programs.vesktop = {
-          enable = true;
+      config = mkIf config.programs.communication.enable {
+        nixpkgs.config.allowUnfree = true;
+        environment.systemPackages = with pkgs; [
+          teamspeak6-client
+        ];
+
+        home-manager.users.${userName} = {
+          programs.vesktop = {
+            enable = true;
+          };
         };
       };
     };

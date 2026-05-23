@@ -1,25 +1,36 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.modulesAppDevelopment =
-    { pkgs, config, ... }:
+    {
+      pkgs,
+      config,
+      lib,
+      ...
+    }:
     let
       inherit (config.userOptions) userName;
+      inherit (lib) mkEnableOption mkIf;
     in
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-      environment.systemPackages = with pkgs; [
-        postman
-        github-desktop
-      ];
+      options.programs.development = {
+        enable = mkEnableOption "Enables development modules";
+      };
 
-      virtualisation.docker.enable = true;
-      users.users.${userName}.extraGroups = [ "docker" ];
+      config = mkIf config.programs.development.enable {
+        environment.systemPackages = with pkgs; [
+          postman
+          github-desktop
+        ];
 
-      home-manager.users.${userName} = {
-        nixpkgs.config.allowUnfree = true;
-        programs.vscode.enable = true;
+        virtualisation.docker.enable = true;
+        users.users.${userName}.extraGroups = [ "docker" ];
 
+        home-manager.users.${userName} = {
+          nixpkgs.config.allowUnfree = true;
+          programs.vscode.enable = true;
+        };
       };
     };
 }

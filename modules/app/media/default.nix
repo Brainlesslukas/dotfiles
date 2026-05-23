@@ -2,12 +2,27 @@
 {
 
   flake.nixosModules.modulesAppMedia =
-    { config, pkgs, ... }:
+    {
+      config,
+      pkgs,
+      lib,
+      ...
+    }:
+    let
+      inherit (lib) mkEnableOption mkIf;
+    in
 
     {
       imports = [ inputs.spicetify-nix.nixosModules.default ];
-      programs.spicetify = {
-        enable = true;
+
+      options.programs.media = {
+        enable = mkEnableOption "Enables media modules";
+      };
+
+      config = mkIf config.programs.media.enable {
+        programs.spicetify = {
+          enable = true;
+        };
       };
     };
 }
