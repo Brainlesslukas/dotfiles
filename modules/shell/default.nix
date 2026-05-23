@@ -8,8 +8,8 @@
     {
       imports = [
         self.nixosModules.modulesShellZsh
+        self.nixosModules.modulesShellP10k
         inputs.home-manager.nixosModules.home-manager
-
       ];
       environment.systemPackages = with pkgs; [
         bat
