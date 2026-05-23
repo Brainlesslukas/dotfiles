@@ -20,10 +20,10 @@
       };
 
       config = mkIf config.programs.productivity.enable {
-        home-manager.users.${userName} = {
-          nixpkgs.config.allowUnfree = true;
-          programs.obsidian.enable = true;
-        };
+        environment.systemPackages = with pkgs; [
+          obsidian
+          onlyoffice-desktopeditors
+        ];
       };
     };
 }
