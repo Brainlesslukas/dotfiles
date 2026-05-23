@@ -7,7 +7,7 @@
     in 
     {
       options.services.streamdeck = {
-        enable = mkEnableOption "Streamdeck Service";
+        enable = mkEnableOption "Enables streamdeck service";
       };
 
       config = mkIf config.services.streamdeck.enable {
