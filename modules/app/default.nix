@@ -3,7 +3,6 @@
   flake.nixosModules.modulesApp = {
     imports = [
       self.nixosModules.modulesAppTerminal
-      self.nixosModules.modulesAppVicinae
       self.nixosModules.modulesAppBrowsing
       self.nixosModules.modulesAppCommunication
       self.nixosModules.modulesAppMedia

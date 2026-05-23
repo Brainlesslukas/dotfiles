@@ -1,7 +1,7 @@
 { self, inputs, ... }:
 {
 
-  flake.nixosModules.modulesAppVicinae =
+  flake.nixosModules.modulesDesktopVicinae =
     { pkgs, config, ... }:
     let
       inherit (config.userOptions) userName;

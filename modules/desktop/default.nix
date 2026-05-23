@@ -5,6 +5,7 @@
       self.nixosModules.modulesDesktopHypr
       self.nixosModules.modulesDesktopStylix
       self.nixosModules.modulesDesktopNoctalia
+      self.nixosModules.modulesDesktopVicinae
     ];
   };
 }
