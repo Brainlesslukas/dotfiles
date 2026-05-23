@@ -26,7 +26,18 @@
 
         home-manager.users.${userName} = {
           nixpkgs.config.allowUnfree = true;
-          programs.vscode.enable = true;
+          programs.vscode = {
+            enable = true;
+            profiles.default.extensions = with pkgs.vscode-extensions; [
+              # im using VSC only for platformio so there are not many extensions :)
+              jdinhlife.gruvbox
+              oderwat.indent-rainbow
+              pkief.material-icon-theme
+              platformio.platformio-ide
+              esbenp.prettier-vscode
+              asvetliakov.vscode-neovim
+            ];
+          };
         };
       };
     };
