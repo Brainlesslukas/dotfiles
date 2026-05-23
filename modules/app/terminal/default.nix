@@ -1,7 +1,7 @@
 { self, inputs, ... }:
 {
 
-  flake.nixosModules.modulesAppGhostty =
+  flake.nixosModules.modulesAppTerminal =
     { pkgs, config, ... }:
     let
       inherit (config.userOptions) userName;

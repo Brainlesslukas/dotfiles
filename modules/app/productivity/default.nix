@@ -1,7 +1,7 @@
 { self, inputs, ... }:
 {
 
-  flake.nixosModules.modulesAppObsidian =
+  flake.nixosModules.modulesAppProductivity =
     { pkgs, config, ... }:
     let
       inherit (config.userOptions) userName;

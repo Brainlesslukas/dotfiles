@@ -2,14 +2,14 @@
 {
   flake.nixosModules.modulesApp = {
     imports = [
-      self.nixosModules.modulesAppGhostty
+      self.nixosModules.modulesAppTerminal
       self.nixosModules.modulesAppVicinae
       self.nixosModules.modulesAppBrowsing
       self.nixosModules.modulesAppCommunication
-      self.nixosModules.modulesAppSpicetify
+      self.nixosModules.modulesAppMedia
       self.nixosModules.modulesAppAi
       self.nixosModules.modulesAppDevelopment
-      self.nixosModules.modulesAppObsidian
+      self.nixosModules.modulesAppProductivity
       self.nixosModules.modulesAppRclone
       self.nixosModules.modulesAppGaming
     ];
