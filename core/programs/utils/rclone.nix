@@ -1,6 +1,6 @@
 { self, inputs, ... }:
 {
-  flake.nixosModules.modulesAppRclone =
+  flake.nixosModules.coreProgramsUtilsRclone =
     { pkgs, config, ... }:
     let
       inherit (config.userOptions) userName;

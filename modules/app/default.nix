@@ -10,7 +10,6 @@
       self.nixosModules.modulesAppAi
       self.nixosModules.modulesAppDevelopment
       self.nixosModules.modulesAppProductivity
-      self.nixosModules.modulesAppRclone
       self.nixosModules.modulesAppGaming
     ];
   };

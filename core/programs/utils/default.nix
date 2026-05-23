@@ -7,6 +7,7 @@
       self.nixosModules.coreProgramsUtilsPipes
       self.nixosModules.coreProgramsUtilsCava
       self.nixosModules.coreProgramsUtilsRipgrep
+      self.nixosModules.coreProgramsUtilsRclone
     ];
   };
 }
