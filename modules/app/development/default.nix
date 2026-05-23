@@ -33,7 +33,7 @@
               jdinhlife.gruvbox
               oderwat.indent-rainbow
               pkief.material-icon-theme
-              platformio.platformio-ide
+              platformio.platformio-vscode-ide
               esbenp.prettier-vscode
               asvetliakov.vscode-neovim
             ];
