@@ -12,7 +12,7 @@
     in
     {
       options.programs.ai = {
-        enable = mkEnableOption "AI profile";
+        enable = mkEnableOption "Enables AI modules";
       };
 
       config = mkIf config.programs.ai.enable {
