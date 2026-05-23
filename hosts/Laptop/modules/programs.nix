@@ -11,5 +11,6 @@
     programs.media.enable = true;
     programs.productivity.enable = true;
     programs.terminal.enable = true;
+    programs.emulators.enable = true;
   };
 }

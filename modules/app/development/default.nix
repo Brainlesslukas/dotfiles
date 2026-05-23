@@ -24,9 +24,6 @@
           github-desktop
         ];
 
-        virtualisation.docker.enable = true;
-        users.users.${userName}.extraGroups = [ "docker" ];
-
         home-manager.users.${userName} = {
           nixpkgs.config.allowUnfree = true;
           programs.vscode.enable = true;
