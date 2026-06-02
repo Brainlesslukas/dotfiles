@@ -22,6 +22,7 @@
         environment.systemPackages = with pkgs; [
           postman
           github-desktop
+          devenv
         ];
 
         home-manager.users.${userName} = {
