@@ -58,8 +58,9 @@
             source ~/.config/zsh/.p10k.zsh
             POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
             eval "$(zoxide init --cmd cd zsh)"
-            eval "$(devenv hook zsh)"
             source <(fzf --zsh) 
+            ''+ lib.optionalString config.programs.development.enable ''
+            eval "$(devenv hook zsh)"
           '';
         };
       };
