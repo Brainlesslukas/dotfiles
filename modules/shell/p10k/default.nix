@@ -8,6 +8,7 @@
     {
       home-manager.users.${userName} = {
         home.file."/home/${userName}/.config/zsh/.p10k.zsh" = {
+          force = true;
           source = ./.p10k.zsh;
         };
       };

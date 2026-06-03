@@ -29,6 +29,7 @@
       home-manager.users.${userName} = {
         wayland.windowManager.hyprland = {
           enable = true;
+          configType = "hyprlang";
           settings = {
             monitor = map monitorLine config.monitors;
 
