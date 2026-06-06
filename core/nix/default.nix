@@ -20,10 +20,17 @@
       };
 
       nix = {
-        settings.experimental-features = [
-          "nix-command"
-          "flakes"
-        ];
+        settings = {
+          trusted-users = [
+            "root"
+            "lukas"
+            "@wheel"
+          ];
+          experimental-features = [
+            "nix-command"
+            "flakes"
+          ];
+        };
         package = pkgs.nixVersions.latest;
         nixPath = [ "nixpkgs=/run/current-system/nixpkgs/" ];
       };
