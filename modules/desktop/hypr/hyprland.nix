@@ -127,13 +127,7 @@
               "$mainMod, V, togglefloating,"
               "$mainMod, TAB, workspace, previous"
               "$mainMod, P, pseudo," # dwindle
-<<<<<<< HEAD
               #"$mainMod, J, togglesplit," # dwindle
-              "$mainMod, F, fullscreen, 0" 
-=======
-              # "$mainMod, J, togglesplit," # dwindle
-              "$mainMod, F, fullscreen, 0"
->>>>>>> bfc65b4 (fix: hyprland stuff)
               #$mainMod, S, exec, hyprshot -m region
 
               "$mainMod, left, movefocus, l"
