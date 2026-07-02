@@ -29,8 +29,8 @@
               "hyprland"
               "gtk"
             ];
-            "org.freedesktop.impl.portal.Secret" = [ "gtk" ];
-            "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+            "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+            "org.freedesktop.impl.portal.FileChooser" = [ "yazi.desktop" ];
           };
           extraPortals = with pkgs; [
             xdg-desktop-portal

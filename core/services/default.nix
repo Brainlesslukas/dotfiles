@@ -5,6 +5,8 @@
       self.nixosModules.coreServicesUpower
       self.nixosModules.coreServicesPowerProfiles
       self.nixosModules.coreServicesStreamdeck
+      self.nixosModules.coreServicesGnome
+      self.nixosModules.coreServicesCtrlpad
     ];
   };
 }

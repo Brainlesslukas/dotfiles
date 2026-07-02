@@ -13,7 +13,10 @@
       inherit (lib) mkEnableOption mkIf;
     in
     {
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
+      imports = [
+        inputs.home-manager.nixosModules.home-manager
+        self.nixosModules.modulesAppCommunicationFractal
+      ];
 
       options.programs.communication = {
         enable = mkEnableOption "Enables communication modules";
@@ -21,10 +24,6 @@
 
       config = mkIf config.programs.communication.enable {
         nixpkgs.config.allowUnfree = true;
-
-        environment.systemPackages = with pkgs; [
-          teamspeak6-client
-        ];
 
         home-manager.users.${userName} = {
           imports = [ inputs.nixcord.homeModules.nixcord ];

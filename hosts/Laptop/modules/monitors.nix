@@ -9,7 +9,7 @@
         refreshRate = 60;
         x = 0;
         y = 0;
-        enabled = false;
+        enabled = true;
       }
       {
         name = "HDMI-A";
@@ -18,7 +18,7 @@
         refreshRate = 100;
         x = 0;
         y = 0;
-        enabled = true;
+        enabled = false;
       }
     ];
   };

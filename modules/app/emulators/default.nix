@@ -18,6 +18,9 @@
 
       config = mkIf config.programs.emulators.enable {
         virtualisation.docker.enable = true;
+        environment.systemPackages = [
+          pkgs.virtualbox
+        ];
         users.users.${userName}.extraGroups = [ "docker" ];
       };
     };
