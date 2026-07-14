@@ -20,7 +20,10 @@
       };
 
       config = mkIf config.programs.media.enable {
-        environment.systemPackages = [ pkgs.vlc ];
+        environment.systemPackages = with pkgs; [
+          vlc
+          obs-studio
+        ];
         programs.spicetify = {
           enable = true;
         };
