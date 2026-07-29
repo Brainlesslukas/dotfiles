@@ -17,7 +17,6 @@
 
       config = mkIf config.programs.ai.enable {
         environment.systemPackages = with pkgs; [
-          ollama
           claude-code
         ];
       };
