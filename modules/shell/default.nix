@@ -26,7 +26,7 @@
           settings = {
             push.autoSetupRemote = true;
             user = {
-              name = "Lukas";
+              name = "brainlesslukas";
               email = "info@brainlesslukas.com";
             };
           };
