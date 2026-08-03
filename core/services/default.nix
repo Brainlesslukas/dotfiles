@@ -7,6 +7,7 @@
       self.nixosModules.coreServicesStreamdeck
       self.nixosModules.coreServicesGnome
       self.nixosModules.coreServicesCtrlpad
+      self.nixosModules.coreServicesSnap
     ];
   };
 }
