@@ -37,7 +37,6 @@
               gameActivityToggle.enable = true;
               permissionsViewer.enable = true;
               showMeYourName.enable = true;
-              friendsSince.enable = true;
               mentionAvatars.enable = true;
               messageLogger.enable = true;
               relationshipNotifier.enable = true;
