@@ -34,7 +34,7 @@
             monitor = map monitorLine config.monitors;
 
             exec-once = [
-              "noctalia-shell"
+              "noctalia"
             ];
 
             input = {

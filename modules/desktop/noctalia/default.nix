@@ -11,81 +11,47 @@
           inputs.noctalia.homeModules.default
         ];
 
-        home.file.".cache/noctalia/wallpapers.json" = {
-          text = builtins.toJSON {
-            defaultWallpaper = "/home/${userName}/dotfiles/assets/wallpapers/${wallpaper}";
-          };
-        };
-
         programs.noctalia = {
           enable = true;
 
           settings = {
-            settingsVersion = 63;
-            bar = {
-              density = "comfortable";
-              barType = "floating";
-              showCapsule = false;
-              contentPadding = 8;
-              marginVertical = 12;
-              marginHorizontal = 20;
-              widgets = {
-                left = [
-                  {
-                    id = "ControlCenter";
-                    useDistroLogo = true;
-                  }
-                  {
-                    id = "SystemMonitor";
-                  }
-                ];
-                center = [
-                  {
-                    id = "Workspace";
-                    labelMode = "none";
-                  }
-                ];
-                right = [
-                  {
-                    id = "MediaMini";
-                  }
-                  {
-                    id = "Volume";
-                  }
-                  {
-                    id = "Bluetooth";
-                  }
-                  {
-                    id = "Network";
-                  }
-                  {
-                    id = "Tray";
-                  }
-                  {
-                    id = "Battery";
-                  }
-                  {
-                    id = "Clock";
-                    formatHorizontal = "HH:mm";
-                    formatVertical = "HH mm";
-                    useMonospacedFont = true;
-                  }
-                  {
-                    id = "NotificationHistory";
-                  }
-                ];
-              };
+            wallpaper = {
+              directory = "/home/${userName}/dotfiles/assets/wallpapers/";
             };
-            general = {
-              enableShadows = false;
-              scaleRatio = 0.9;
+            theme = {
+              source = "custom";
+              custom_palette = "stylix";
             };
-            dock = {
-              enabled = false;
+            widget = {
+              network.show_label = false;
+              workspaces.show_labels = false;
             };
-            location = {
-              monthBeforeDay = false;
-              name = "Stuttgart, Germany";
+            calendar = {
+              enabled = true;
+              refresh_minutes = 5;
+            };
+            bar.default = {
+              concave_edge_corners = false;
+              shadow = false;
+              radius = 6;
+              margin_ends = 24;
+              margin_edge = 20;
+              padding = 16;
+              widget_spacing = 12;
+              thickness = 38;
+              start = [
+                "session"
+                "sysmon"
+              ];
+              center = [ "workspaces" ];
+              end = [
+                "bluetooth"
+                "network"
+                "volume"
+                "clock"
+                "tray"
+                "notifications"
+              ];
             };
           };
         };
