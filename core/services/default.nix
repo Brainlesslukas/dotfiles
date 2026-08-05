@@ -6,7 +6,7 @@
       self.nixosModules.coreServicesPowerProfiles
       self.nixosModules.coreServicesStreamdeck
       self.nixosModules.coreServicesGnome
-      self.nixosModules.coreServicesCtrlpad
+      self.nixosModules.coreServicesCtrlpadDaemon
       self.nixosModules.coreServicesSnap
     ];
   };
