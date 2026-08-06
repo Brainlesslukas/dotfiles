@@ -1,10 +1,15 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.coreServicesStreamdeck =
-    { config, pkgs, lib, ... }:
+    {
+      config,
+      pkgs,
+      lib,
+      ...
+    }:
     let
-      inherit (lib) mkEnableOption mkIf; 
-    in 
+      inherit (lib) mkEnableOption mkIf;
+    in
     {
       options.services.streamdeck = {
         enable = mkEnableOption "Enables streamdeck service";
@@ -31,7 +36,7 @@
             Restart = "on-failure";
             RestartSec = 3;
           };
-          };
+        };
       };
     };
 }

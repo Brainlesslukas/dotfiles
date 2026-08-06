@@ -27,7 +27,6 @@
 
         home-manager.users.${userName} = {
           imports = [ inputs.nixcord.homeModules.nixcord ];
-          nixpkgs.config.allowUnfree = true;
           programs.nixcord = {
             enable = true;
             discord.vencord.enable = false;

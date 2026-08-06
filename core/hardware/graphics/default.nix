@@ -1,9 +1,9 @@
 { self, ... }:
 {
   flake.nixosModules.coreHardwareGraphics = {
-   hardware.graphics = {
+    hardware.graphics = {
       enable = true;
       enable32Bit = true;
-    }; 
+    };
   };
 }
