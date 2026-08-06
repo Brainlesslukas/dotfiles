@@ -32,7 +32,6 @@
     };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-snapd = {
       url = "github:nix-community/nix-snapd";

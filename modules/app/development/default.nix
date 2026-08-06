@@ -19,8 +19,6 @@
       };
 
       config = mkIf config.programs.development.enable {
-        nixpkgs.config.allowUnfree = true;
-
         environment.systemPackages = with pkgs; [
           postman
           github-desktop
@@ -28,6 +26,7 @@
         ];
 
         home-manager.users.${userName} = {
+          nixpkgs.config.allowUnfree = true;
           programs.vscode = {
             enable = true;
             profiles.default.extensions = with pkgs.vscode-extensions; [
