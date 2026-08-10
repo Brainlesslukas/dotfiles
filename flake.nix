@@ -1,4 +1,11 @@
 {
+  nixConfig = {
+    extra-substituters = [ "https://noctalia.cachix.org" ];
+    extra-trusted-public-keys = [
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -9,6 +16,9 @@
     };
     ctrlpad-daemon = {
       url = "github:ctrlpad/daemon";
+    };
+    ctrlpad-desktop = {
+      url = "github:ctrlpad/desktop";
     };
     stylix = {
       url = "github:nix-community/stylix";
@@ -31,7 +41,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia-shell/cachix";
     };
     nix-snapd = {
       url = "github:nix-community/nix-snapd";

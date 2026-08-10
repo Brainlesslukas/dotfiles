@@ -73,16 +73,34 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1785958076,
-        "narHash": "sha256-fKtdYb0ik7Xr+CNDlbf8bEoG6mA0yhnanx+kmrv/C2s=",
+        "lastModified": 1786018217,
+        "narHash": "sha256-AyBTLni64pYbIM7QZhBPoE4QU8OMsILPhrggXfDyZ5c=",
         "owner": "ctrlpad",
         "repo": "daemon",
-        "rev": "34a918077eff6ecedffd6c4767eb81fce57e20f4",
+        "rev": "12c3cff992387b8cbc9771171d785699482308d8",
         "type": "github"
       },
       "original": {
         "owner": "ctrlpad",
         "repo": "daemon",
+        "type": "github"
+      }
+    },
+    "ctrlpad-desktop": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1786378989,
+        "narHash": "sha256-dxyvfHpNvgwU66g5BzJiLQNgGUzmHnHi66ECfCkVWEU=",
+        "owner": "ctrlpad",
+        "repo": "desktop",
+        "rev": "dfabbc5c62fbfbd4f93c4f5d085de801d94186e1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ctrlpad",
+        "repo": "desktop",
         "type": "github"
       }
     },
@@ -302,16 +320,16 @@
     "nixcord": {
       "inputs": {
         "flake-parts": "flake-parts_3",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "nixpkgs-nixcord": "nixpkgs-nixcord",
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1786008523,
-        "narHash": "sha256-3J7OROQZEWGz91eZkcN5mivzUIu3wwhxsX37T0QBuJw=",
+        "lastModified": 1786013188,
+        "narHash": "sha256-zFsOHFtWozMWlH62CTUwBdKdTNN+esUGIyluRcitTQY=",
         "owner": "FlameFlag",
         "repo": "nixcord",
-        "rev": "18d50ccebf40f7f30ac5317cd7ca3bc257a032f2",
+        "rev": "61ae857286c8f3c63bd3b20492e0f87d78bcead2",
         "type": "github"
       },
       "original": {
@@ -415,6 +433,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1786106723,
+        "narHash": "sha256-zDSUbpoeo/9ZmD2+wXnzxoo1+uhL8vxc0b8yuYMKYq0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f13ff45afd1bb73e640eaa08a7066dbed07e3238",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1785386831,
         "narHash": "sha256-sPS3CaXH8RAT3FZRuy4VcV47iuYIWMMfa0GbyJKC3o4=",
         "owner": "NixOS",
@@ -429,7 +463,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1785967620,
         "narHash": "sha256-IItrdb7Puk05RqOBWZYFC5X6Wl1sJmCfh5MWVHw5iMM=",
@@ -445,7 +479,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_5": {
       "locked": {
         "lastModified": 1785571196,
         "narHash": "sha256-xwSqxTsama0YTtS78+4YyCm6jJg09v78QWfP1cAyoVA=",
@@ -458,7 +492,7 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
       }
     },
-    "nixpkgs_5": {
+    "nixpkgs_6": {
       "locked": {
         "lastModified": 1778869304,
         "narHash": "sha256-30sZNZoA1cqF5JNO9fVX+wgiQYjB7HJqqJ4ztCDeBZE=",
@@ -476,18 +510,19 @@
     },
     "noctalia": {
       "inputs": {
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1785998449,
-        "narHash": "sha256-hJjByYo/ZRCqPaXiZQDdyhOHJtAohGHkTBk07CULetI=",
+        "lastModified": 1786013897,
+        "narHash": "sha256-u14Iaus6ROW6IWQUNGZ/IZJ3TcIUs1ngxn5sUMNnwMM=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "364ffde1981526804e0e794a3129f6770ad91005",
+        "rev": "0247e4c5e5268f8c2a5658b60b97cb5f2eca7766",
         "type": "github"
       },
       "original": {
         "owner": "noctalia-dev",
+        "ref": "cachix",
         "repo": "noctalia-shell",
         "type": "github"
       }
@@ -520,12 +555,13 @@
     "root": {
       "inputs": {
         "ctrlpad-daemon": "ctrlpad-daemon",
+        "ctrlpad-desktop": "ctrlpad-desktop",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
         "nix-snapd": "nix-snapd",
         "nixcord": "nixcord",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_4",
         "noctalia": "noctalia",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
@@ -536,7 +572,7 @@
     },
     "soulver-cpp": {
       "inputs": {
-        "nixpkgs": "nixpkgs_5",
+        "nixpkgs": "nixpkgs_6",
         "nixpkgs-libxml2": "nixpkgs-libxml2"
       },
       "locked": {
