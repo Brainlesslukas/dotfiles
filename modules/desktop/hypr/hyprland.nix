@@ -128,7 +128,8 @@
               "$mainMod, TAB, workspace, previous"
               "$mainMod, P, pseudo," # dwindle
               #"$mainMod, J, togglesplit," # dwindle
-              #$mainMod, S, exec, hyprshot -m region
+              #"$mainMod, S, exec, hyprshot -m region --clipboard-only"
+              "$mainMod SHIFT , s, exec, flameshot gui -c -p ~/Pictures"
 
               "$mainMod, left, movefocus, l"
               "$mainMod, right, movefocus, r"

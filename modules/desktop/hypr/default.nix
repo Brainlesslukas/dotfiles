@@ -9,9 +9,5 @@
         self.nixosModules.modulesDesktopHyprHyprpaper
         self.nixosModules.modulesDesktopHyprMonitors
       ];
-
-      environment.systemPackages = with pkgs; [
-        yazi
-      ];
     };
 }
