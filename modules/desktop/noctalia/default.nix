@@ -19,6 +19,7 @@
               directory = "/home/${userName}/dotfiles/assets/wallpapers/";
             };
             theme = {
+              mode = "dark";
               source = "custom";
               custom_palette = "stylix";
             };
