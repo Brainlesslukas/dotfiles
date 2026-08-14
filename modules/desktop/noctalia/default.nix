@@ -31,6 +31,9 @@
               enabled = true;
               refresh_minutes = 5;
             };
+            shell = {
+              avatar_path = "/home/${userName}/dotfiles/assets/avatar.png";
+            };
             location = {
               address = location;
               auto_locate = false;
