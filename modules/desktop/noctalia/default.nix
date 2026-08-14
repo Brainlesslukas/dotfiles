@@ -27,6 +27,10 @@
               network.show_label = false;
               workspaces.show_labels = false;
               tray.drawer = true;
+              battery = {
+                hide_when_plugged = true;
+                hide_when_full = true;
+              };
             };
             calendar = {
               enabled = true;
@@ -51,6 +55,7 @@
               start = [
                 "session"
                 "sysmon"
+                "battery"
               ];
               center = [ "workspaces" ];
               end = [
