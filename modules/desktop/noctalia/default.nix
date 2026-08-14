@@ -26,6 +26,7 @@
             widget = {
               network.show_label = false;
               workspaces.show_labels = false;
+              tray.drawer = true;
             };
             calendar = {
               enabled = true;
