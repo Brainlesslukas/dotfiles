@@ -27,6 +27,7 @@
               network.show_label = false;
               workspaces.show_labels = false;
               tray.drawer = true;
+              volume.show_label = false;
               battery = {
                 hide_when_plugged = true;
                 hide_when_full = true;
