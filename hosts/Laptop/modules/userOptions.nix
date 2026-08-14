@@ -7,6 +7,7 @@
         hostName = "Laptop";
         userName = "lukas";
         wallpaper = "sunset-forest-light.jpg";
+        location = "Stuttgart, DE";
       };
     };
 }

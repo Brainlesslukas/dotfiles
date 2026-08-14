@@ -6,7 +6,6 @@
     {
       imports = [
         self.nixosModules.modulesDesktopHyprHyprland
-        self.nixosModules.modulesDesktopHyprHyprpaper
         self.nixosModules.modulesDesktopHyprMonitors
       ];
     };

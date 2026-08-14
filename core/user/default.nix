@@ -22,6 +22,12 @@
             The filename of the wallpaper you want to use e.g. "my-wallpaper.png". Located in /dotfiles/assets/wallpapers
           '';
         };
+        location = lib.mkOption {
+          type = lib.types.str;
+          description = ''
+            The location you live in, used by Noctalia. E.g. "Stuttgart, DE"
+          '';
+        };
       };
     };
 }

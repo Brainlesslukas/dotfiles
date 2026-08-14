@@ -3,7 +3,7 @@
   flake.nixosModules.modulesDesktopNoctalia =
     { pkgs, config, ... }:
     let
-      inherit (config.userOptions) userName wallpaper;
+      inherit (config.userOptions) userName wallpaper location;
     in
     {
       home-manager.users.${userName} = {
@@ -30,6 +30,10 @@
             calendar = {
               enabled = true;
               refresh_minutes = 5;
+            };
+            location = {
+              address = location;
+              auto_locate = false;
             };
             bar.default = {
               concave_edge_corners = false;
