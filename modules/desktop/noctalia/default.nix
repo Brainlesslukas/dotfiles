@@ -39,6 +39,15 @@
             };
             shell = {
               avatar_path = "/home/${userName}/dotfiles/assets/avatar.png";
+              panel = {
+                shadow = false;
+                launcher_placement = "floating";
+                clipboard_placement = "floating";
+                control_center_placement = "floating";
+                wallpaper_placement = "floating";
+                session_placement = "floating";
+                polkit_placement = "floating";
+              };
             };
             location = {
               address = location;
