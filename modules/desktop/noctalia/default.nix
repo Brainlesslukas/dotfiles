@@ -3,7 +3,7 @@
   flake.nixosModules.modulesDesktopNoctalia =
     { pkgs, config, ... }:
     let
-      inherit (config.userOptions) userName wallpaper location;
+      inherit (config.userOptions) userName location;
     in
     {
       home-manager.users.${userName} = {
