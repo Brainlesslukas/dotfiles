@@ -5,6 +5,7 @@
       self.nixosModules.coreHardwareNetwork
       self.nixosModules.coreHardwareBluetooth
       self.nixosModules.coreHardwareGraphics
+      self.nixosModules.coreHardwareRgb
     ];
   };
 }

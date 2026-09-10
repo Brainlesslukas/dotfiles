@@ -6,6 +6,7 @@
       self.nixosModules.hostsDesktopModulesMonitors
       self.nixosModules.hostsDesktopModulesPrograms
       self.nixosModules.hostsDesktopModulesServices
+      self.nixosModules.hostsDesktopModulesHardware
     ];
   };
 }
