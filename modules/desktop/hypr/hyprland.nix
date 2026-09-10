@@ -2,17 +2,29 @@
 {
 
   flake.nixosModules.modulesDesktopHyprHyprland =
-    { pkgs, config, ... }:
+    {
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
     let
       inherit (config.userOptions) userName;
 
-      monitorLine =
+      monitorSpec =
         m:
-        let
-          res = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
-          pos = "${toString m.x}x${toString m.y}";
-        in
-        if m.enabled then "${m.name}, ${res}, ${pos}, 1" else "${m.name}, disable";
+        if m.enabled then
+          {
+            output = m.name;
+            mode = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
+            position = "${toString m.x}x${toString m.y}";
+            scale = 1;
+          }
+        else
+          {
+            output = m.name;
+            disabled = true;
+          };
     in
 
     {
@@ -28,186 +40,271 @@
 
       home-manager.users.${userName} = {
         wayland.windowManager.hyprland = {
-          configType = "hyprlang";
+          configType = "lua";
           enable = true;
           settings = {
-            monitor = map monitorLine config.monitors;
-
-            exec-once = [
-              "noctalia"
-            ];
-
-            input = {
-              kb_layout = "de";
+            mainMod = {
+              _var = "SUPER";
+            };
+            terminal = {
+              _var = "ghostty";
+            };
+            fileManager = {
+              _var = "yazi";
+            };
+            menu = {
+              _var = "vicinae";
             };
 
-            dwindle = {
-              preserve_split = true;
-            };
+            monitor = map monitorSpec config.monitors;
 
-            master = {
-              new_status = "master";
-            };
-
-            general = {
-              gaps_in = 4;
-              gaps_out = "16, 21, 12, 21";
-
-              border_size = 2;
-
-              resize_on_border = false;
-
-              #"col.inactive_border" = "rgba(69, 133, 136, 1)";
-              #col.active_border = "rgba(00000000)";
-
-              allow_tearing = false;
-
-              layout = "dwindle";
-            };
-
-            decoration = {
-              rounding = 6;
-              rounding_power = 4;
-
-              active_opacity = 1.0;
-              inactive_opacity = 1.0;
-
-              shadow = {
-                enabled = false;
-                range = 4;
-                render_power = 3;
-                #color = "rgba(69, 133, 136, 1)";
-              };
-
-              blur = {
-                enabled = true;
-                size = 2;
-                passes = 4;
-
-                vibrancy = 0.1696;
-              };
-            };
-
-            animations = {
-              enabled = true;
-              bezier = [
-                "easeOutQuint, 0.23, 1, 0.32, 1"
-                "easeInOutCubic, 0.65, 0.05, 0.36, 1"
-                "linear, 0, 0, 1, 1"
-                "almostLinear, 0.5, 0.5, 0.75, 1"
-                "quick, 0.15, 0, 0.1, 1"
-              ];
-              animation = [
-                "global, 1, 10, default"
-                "border, 1, 5.39, easeOutQuint"
-                "windows, 1, 4.79, easeOutQuint"
-                "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
-                "windowsOut, 1, 1.49, linear, popin 87%"
-                "fadeIn, 1, 1.73, almostLinear"
-                "fadeOut, 1, 1.46, almostLinear"
-                "fade, 1, 3.03, quick"
-                "layers, 1, 3.81, easeOutQuint"
-                "layersIn, 1, 4, easeOutQuint, fade"
-                "layersOut, 1, 1.5, linear, fade"
-                "fadeLayersIn, 1, 1.79, almostLinear"
-                "fadeLayersOut, 1, 1.39, almostLinear"
-                "workspaces, 1, 1.94, almostLinear, slide"
-                "workspacesIn, 1, 1.21, almostLinear, slide"
-                "workspacesOut, 1, 1.94, almostLinear, slide"
-                "zoomFactor, 1, 7, quick"
+            on = {
+              _args = [
+                "hyprland.start"
+                (lib.generators.mkLuaInline ''
+                  function()
+                    hl.exec_cmd("noctalia")
+                  end'')
               ];
             };
 
-            "$mainMod" = "SUPER";
-            bind = [
-              "$mainMod, Q, exec, ghostty"
-              "$mainMod, C, killactive,"
-              "$mainMod, M, exit,"
-              "$mainMod, SPACE, exec, vicinae toggle"
-              "$mainMod, V, togglefloating,"
-              "$mainMod, TAB, workspace, previous"
-              "$mainMod, P, pseudo," # dwindle
-              #"$mainMod, J, togglesplit," # dwindle
-              #"$mainMod, S, exec, hyprshot -m region --clipboard-only"
-              "$mainMod SHIFT , s, exec, flameshot gui -c -p ~/Pictures"
+            config = {
+              input = {
+                kb_layout = "de";
+              };
 
-              "$mainMod, left, movefocus, l"
-              "$mainMod, right, movefocus, r"
-              "$mainMod, up, movefocus, u"
-              "$mainMod, down, movefocus, d"
+              master = {
+                new_status = "master";
+              };
 
-              "$mainMod, 1, workspace, 1"
-              "$mainMod, 2, workspace, 2"
-              "$mainMod, 3, workspace, 3"
-              "$mainMod, 4, workspace, 4"
-              "$mainMod, 5, workspace, 5"
-              "$mainMod, 6, workspace, 6"
-              "$mainMod, 7, workspace, 7"
-              "$mainMod, 8, workspace, 8"
-              "$mainMod, 9, workspace, 9"
-              "$mainMod, 0, workspace, 10"
+              general = {
+                gaps_in = 4;
+                gaps_out = {
+                  top = 16;
+                  right = 21;
+                  bottom = 12;
+                  left = 21;
+                };
+                border_size = 2;
+                resize_on_border = false;
+                allow_tearing = false;
+                layout = "dwindle";
+              };
 
-              "$mainMod SHIFT, 1, movetoworkspace, 1"
-              "$mainMod SHIFT, 2, movetoworkspace, 2"
-              "$mainMod SHIFT, 3, movetoworkspace, 3"
-              "$mainMod SHIFT, 4, movetoworkspace, 4"
-              "$mainMod SHIFT, 5, movetoworkspace, 5"
-              "$mainMod SHIFT, 6, movetoworkspace, 6"
-              "$mainMod SHIFT, 7, movetoworkspace, 7"
-              "$mainMod SHIFT, 8, movetoworkspace, 8"
-              "$mainMod SHIFT, 9, movetoworkspace, 9"
-              "$mainMod SHIFT, 0, movetoworkspace, 10"
+              decoration = {
+                rounding = 6;
+                rounding_power = 4;
+                active_opacity = 1.0;
+                inactive_opacity = 1.0;
+                shadow = {
+                  enabled = false;
+                  range = 4;
+                  render_power = 3;
+                };
+                blur = {
+                  enabled = true;
+                  size = 2;
+                  passes = 4;
+                  vibrancy = 0.1696;
+                };
+              };
 
-              "$mainMod, mouse_down, workspace, e+1"
-              "$mainMod, mouse_up, workspace, e-1"
-            ];
+              animations.enabled = true;
+            };
 
-            bindm = [
-              "$mainMod, mouse:272, movewindow"
-              "$mainMod, mouse:273, resizewindow"
-            ];
-
-            bindel = [
-              ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-              ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-              ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-              ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-              ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
-              ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
-            ];
-
-            bindl = [
-              ", XF86AudioNext, exec, playerctl next"
-              ", XF86AudioPause, exec, playerctl play-pause"
-              ", XF86AudioPlay, exec, playerctl play-pause"
-              ", XF86AudioPrev, exec, playerctl previous"
-            ];
-
-            workspace = [
-              "1, persistent:true"
-              "2, persistent:true"
-              "3, persistent:true"
-              "4, persistent:true"
-              "5, persistent:true"
-            ];
-
-            windowrule = [
+            curve = [
               {
-                name = "ignore_fullscreen-requests";
-                suppress_event = "maximize, class:.*";
+                _args = [
+                  "easeOutQuint"
+                  {
+                    type = "bezier";
+                    points = [
+                      [
+                        0.23
+                        1
+                      ]
+                      [
+                        0.32
+                        1
+                      ]
+                    ];
+                  }
+                ];
               }
               {
-                name = "xwayland_drag_fix";
-                no_focus = "on";
-                "match:class" = "^$";
-                "match:title" = "^$";
-                "match:xwayland" = "1";
-                "match:float" = "1";
-                "match:fullscreen" = "0";
-                "match:pin" = "0";
+                _args = [
+                  "easeInOutCubic"
+                  {
+                    type = "bezier";
+                    points = [
+                      [
+                        0.65
+                        0.05
+                      ]
+                      [
+                        0.36
+                        1
+                      ]
+                    ];
+                  }
+                ];
+              }
+              {
+                _args = [
+                  "linear"
+                  {
+                    type = "bezier";
+                    points = [
+                      [
+                        0
+                        0
+                      ]
+                      [
+                        1
+                        1
+                      ]
+                    ];
+                  }
+                ];
+              }
+              {
+                _args = [
+                  "almostLinear"
+                  {
+                    type = "bezier";
+                    points = [
+                      [
+                        0.5
+                        0.5
+                      ]
+                      [
+                        0.75
+                        1
+                      ]
+                    ];
+                  }
+                ];
+              }
+              {
+                _args = [
+                  "quick"
+                  {
+                    type = "bezier";
+                    points = [
+                      [
+                        0.15
+                        0
+                      ]
+                      [
+                        0.1
+                        1
+                      ]
+                    ];
+                  }
+                ];
+              }
+              {
+                _args = [
+                  "easy"
+                  {
+                    type = "spring";
+                    mass = 1;
+                    stiffness = 238.1191;
+                    dampening = 24.21279333;
+                  }
+                ];
+              }
+            ];
+
+            animation = [
+              {
+                _args = [
+                  {
+                    leaf = "global";
+                    enabled = true;
+                    speed = 10;
+                    bezier = "default";
+                  }
+                ];
+              }
+            ];
+
+            # FIXME: "$mainMod SHIFT , s, exec, flameshot gui -c -p ~/Pictures"
+
+            bind = [
+              {
+                _args = [
+                  (lib.generators.mkLuaInline ''mainMod .. " + Q"'')
+                  (lib.generators.mkLuaInline "hl.dsp.exec_cmd(terminal)")
+                ];
+              }
+              {
+                _args = [
+                  (lib.generators.mkLuaInline ''mainMod .. " + C"'')
+                  (lib.generators.mkLuaInline "hl.dsp.window.close()")
+                ];
+              }
+              {
+                _args = [
+                  (lib.generators.mkLuaInline ''mainMod .. " + E"'')
+                  (lib.generators.mkLuaInline "hl.dsp.exec_cmd(fileManager)")
+                ];
+              }
+              {
+                _args = [
+                  (lib.generators.mkLuaInline ''mainMod .. " + V"'')
+                  (lib.generators.mkLuaInline ''hl.dsp.window.float({ action = "toggle" })'')
+                ];
+              }
+              {
+                _args = [
+                  (lib.generators.mkLuaInline ''mainMod .. " + SPACE"'')
+                  (lib.generators.mkLuaInline "hl.dsp.exec_cmd(menu)")
+                ];
+              }
+            ];
+
+            window_rule = [
+              {
+                name = "suppress-maximize-events";
+                match = {
+                  class = ".*";
+                };
+                suppress_event = "maximize";
+              }
+              {
+                name = "fix-xwayland-drags";
+                match = {
+                  class = "^$";
+                  title = "^$";
+                  xwayland = true;
+                  float = true;
+                  fullscreen = false;
+                  pin = false;
+                };
+                no_focus = true;
+              }
+            ];
+
+            workspace_rule = [
+              {
+                workspace = "10";
+                persistent = true;
               }
             ];
           };
+
+          extraConfig = ''
+            for i = 1, 10 do
+              local key = i % 10
+              hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+              hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+            end
+
+            for i = 1, 5 do
+              hl.workspace_rule({ workspace = tostring(i), persistent = true })
+            end
+          '';
         };
       };
     };
