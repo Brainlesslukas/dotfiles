@@ -7,6 +7,7 @@
         hostName = "Desktop";
         userName = "lukas";
         location = "Stuttgart, DE";
+        browser = "zen";
       };
     };
 }

@@ -22,6 +22,13 @@
             The location you live in, used by Noctalia. E.g. "Stuttgart, DE"
           '';
         };
+        browser = lib.mkOption {
+          type = lib.types.str;
+          description = ''
+            The browser CLI command to use as the default browser.
+            Examples: "firefox", "chromium", ...
+          '';
+        };
       };
     };
 }

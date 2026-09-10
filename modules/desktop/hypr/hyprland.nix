@@ -9,7 +9,7 @@
       ...
     }:
     let
-      inherit (config.userOptions) userName;
+      inherit (config.userOptions) userName browser;
 
       monitorSpec =
         m:
@@ -57,6 +57,9 @@
             };
             screenshot = {
               _var = "flameshot gui -c -p ~/Pictures";
+            };
+            browser = {
+              _var = browser;
             };
 
             monitor = map monitorSpec config.monitors;
@@ -194,7 +197,7 @@
               {
                 _args = [
                   (lib.generators.mkLuaInline ''mainMod .. " + W"'')
-                  (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("zen")'')
+                  (lib.generators.mkLuaInline "hl.dsp.exec_cmd(browser)")
                 ];
               }
               {
