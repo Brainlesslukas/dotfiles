@@ -1,5 +1,4 @@
 { self, ... }:
 {
-  flake.nixosModules.hostsDesktopModulesServices = {
-  };
+  flake.nixosModules.hostsDesktopModulesServices = { };
 }

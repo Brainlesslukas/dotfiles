@@ -7,6 +7,5 @@
       self.nixosModules.hostsDesktopModulesPrograms
       self.nixosModules.hostsDesktopModulesServices
     ];
-    services.logind.settings.Login.HandleLidSwitch = "ignore";
   };
 }

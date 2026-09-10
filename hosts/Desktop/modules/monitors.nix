@@ -3,20 +3,11 @@
   flake.nixosModules.hostsDesktopModulesMonitors = {
     config.monitors = [
       {
-        name = "HDMI-A-1";
-        width = 1920;
-        height = 1080;
-        refreshRate = 60;
-        x = 0;
-        y = 0;
-        enabled = true;
-      }
-      {
-        name = "DP-1";
-        width = 1920;
-        height = 1080;
+        name = "HDMI-A";
+        width = 3440;
+        height = 1440;
         refreshRate = 100;
-        x = 1920;
+        x = 0;
         y = 0;
         enabled = true;
       }
