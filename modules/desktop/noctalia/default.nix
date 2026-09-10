@@ -77,6 +77,16 @@
                 "notifications"
               ];
             };
+            idle.behavior = {
+              screen-off = {
+                timeout = 120;
+                action = "screen_off";
+              };
+              lock = {
+                timeout = 240;
+                action = "lock";
+              };
+            };
           };
         };
       };
