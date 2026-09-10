@@ -15,7 +15,7 @@
     {
       imports = [
         inputs.home-manager.nixosModules.home-manager
-        self.nixosModules.modulesAppCommunicationFractal
+        self.nixosModules.modulesAppCommunicationElement
       ];
 
       options.programs.communication = {

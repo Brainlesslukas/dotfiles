@@ -1,11 +1,11 @@
 { self, inputs, ... }:
 {
 
-  flake.nixosModules.modulesAppCommunicationFractal = # Matrix
+  flake.nixosModules.modulesAppCommunicationElement = # Matrix
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
-        fractal
+        element-desktop 
       ];
     };
 }

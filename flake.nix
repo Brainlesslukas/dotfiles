@@ -18,7 +18,7 @@
       url = "github:ctrlpad/daemon";
     };
     ctrlpad-desktop = {
-      url = "github:ctrlpad/desktop";
+      url = "github:ctrlpad/desktop/v0.0.4";
     };
     stylix = {
       url = "github:nix-community/stylix";
