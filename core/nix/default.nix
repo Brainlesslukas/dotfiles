@@ -23,7 +23,7 @@
         settings = {
           trusted-users = [
             "root"
-            "lukas"
+            userName
             "@wheel"
           ];
           experimental-features = [
