@@ -55,6 +55,9 @@
             menu = {
               _var = "vicinae toggle";
             };
+            screenshot = {
+              _var = "flameshot gui -c -p ~/Pictures";
+            };
 
             monitor = map monitorSpec config.monitors;
 
@@ -203,7 +206,7 @@
               {
                 _args = [
                   (lib.generators.mkLuaInline ''mainMod .. " + S"'')
-                  (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("flameshot gui -c -p ~/Pictures")'')
+                  (lib.generators.mkLuaInline "hl.dsp.exec_cmd(screenshot)")
                 ];
               }
               {
