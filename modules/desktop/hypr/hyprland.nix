@@ -115,7 +115,7 @@
             curve = [
               {
                 _args = [
-                  "easeOutQuint"
+                  "myBezier"
                   {
                     type = "bezier";
                     points = [
@@ -131,99 +131,39 @@
                   }
                 ];
               }
-              {
-                _args = [
-                  "easeInOutCubic"
-                  {
-                    type = "bezier";
-                    points = [
-                      [
-                        0.65
-                        0.05
-                      ]
-                      [
-                        0.36
-                        1
-                      ]
-                    ];
-                  }
-                ];
-              }
-              {
-                _args = [
-                  "linear"
-                  {
-                    type = "bezier";
-                    points = [
-                      [
-                        0
-                        0
-                      ]
-                      [
-                        1
-                        1
-                      ]
-                    ];
-                  }
-                ];
-              }
-              {
-                _args = [
-                  "almostLinear"
-                  {
-                    type = "bezier";
-                    points = [
-                      [
-                        0.5
-                        0.5
-                      ]
-                      [
-                        0.75
-                        1
-                      ]
-                    ];
-                  }
-                ];
-              }
-              {
-                _args = [
-                  "quick"
-                  {
-                    type = "bezier";
-                    points = [
-                      [
-                        0.15
-                        0
-                      ]
-                      [
-                        0.1
-                        1
-                      ]
-                    ];
-                  }
-                ];
-              }
-              {
-                _args = [
-                  "easy"
-                  {
-                    type = "spring";
-                    mass = 1;
-                    stiffness = 238.1191;
-                    dampening = 24.21279333;
-                  }
-                ];
-              }
             ];
 
             animation = [
               {
                 _args = [
                   {
-                    leaf = "global";
+                    leaf = "windows";
                     enabled = true;
-                    speed = 10;
-                    bezier = "default";
+                    speed = 5;
+                    bezier = "myBezier";
+                    stlye = "popin 70%";
+                  }
+                ];
+              }
+              {
+                _args = [
+                  {
+                    leaf = "workspacesIn";
+                    enabled = true;
+                    speed = 3.5;
+                    bezier = "myBezier";
+                    style = "slide";
+                  }
+                ];
+              }
+              {
+                _args = [
+                  {
+                    leaf = "workspacesOut";
+                    enabled = true;
+                    speed = 3.5;
+                    bezier = "easeOutQuint";
+                    style = "slide";
                   }
                 ];
               }
