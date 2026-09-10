@@ -79,11 +79,11 @@
             };
             idle.behavior = {
               screen-off = {
-                timeout = 120;
+                timeout = 240;
                 action = "screen_off";
               };
               lock = {
-                timeout = 240;
+                timeout = 300;
                 action = "lock";
               };
             };
