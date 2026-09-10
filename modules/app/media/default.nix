@@ -24,9 +24,6 @@
           vlc
           obs-studio
         ];
-        programs.spicetify = {
-          enable = true;
-        };
       };
     };
 }
