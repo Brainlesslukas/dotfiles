@@ -193,6 +193,12 @@
               }
               {
                 _args = [
+                  (lib.generators.mkLuaInline ''mainMod .. " + W"'')
+                  (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("zen")'')
+                ];
+              }
+              {
+                _args = [
                   (lib.generators.mkLuaInline ''mainMod .. " + V"'')
                   (lib.generators.mkLuaInline ''hl.dsp.window.float({ action = "toggle" })'')
                 ];
