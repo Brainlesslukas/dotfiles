@@ -50,10 +50,10 @@
               _var = "ghostty";
             };
             fileManager = {
-              _var = "yazi";
+              _var = "ghostty -e yazi";
             };
             menu = {
-              _var = "vicinae";
+              _var = "vicinae toggle";
             };
 
             monitor = map monitorSpec config.monitors;
