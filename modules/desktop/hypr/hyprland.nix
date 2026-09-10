@@ -168,7 +168,7 @@
                     leaf = "workspacesOut";
                     enabled = true;
                     speed = 3.5;
-                    bezier = "easeOutQuint";
+                    bezier = "myBezier";
                     style = "slide";
                   }
                 ];
