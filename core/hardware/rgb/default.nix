@@ -1,6 +1,6 @@
 { self, inputs, ... }:
 {
-  flake.nixosModules.coreServicesRgb =
+  flake.nixosModules.coreHardwareRgb =
     {
       lib,
       config,
