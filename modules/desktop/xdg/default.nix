@@ -3,18 +3,18 @@
   flake.nixosModules.modulesDesktopXdg =
     { config, pkgs, ... }:
     let
-      inherit (config.userOptions) userName;
+      inherit (config.userOptions) userName browser;
     in
     {
       home-manager.users.${userName} = {
         xdg.mimeApps = {
           enable = true;
           defaultApplications = {
-            "text/html" = "zen.desktop";
-            "x-scheme-handler/http" = "zen.desktop";
-            "x-scheme-handler/https" = "zen.desktop";
-            "x-scheme-handler/about" = "zen.desktop";
-            "x-scheme-handler/unknown" = "zen.desktop";
+            "text/html" = "${browser}.desktop";
+            "x-scheme-handler/http" = "${browser}.desktop";
+            "x-scheme-handler/https" = "${browser}.desktop";
+            "x-scheme-handler/about" = "${browser}.desktop";
+            "x-scheme-handler/unknown" = "${browser}.desktop";
             "inode/directory" = [ "yazi.desktop" ];
             "video/avi" = [ "vlc.desktop" ];
             "video/mp4" = [ "vlc.desktop" ];
