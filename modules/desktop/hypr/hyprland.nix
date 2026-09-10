@@ -229,8 +229,6 @@
               }
             ];
 
-            # FIXME: "$mainMod SHIFT , s, exec, flameshot gui -c -p ~/Pictures"
-
             bind = [
               {
                 _args = [
@@ -260,6 +258,24 @@
                 _args = [
                   (lib.generators.mkLuaInline ''mainMod .. " + SPACE"'')
                   (lib.generators.mkLuaInline "hl.dsp.exec_cmd(menu)")
+                ];
+              }
+              {
+                _args = [
+                  (lib.generators.mkLuaInline ''mainMod .. " + S"'')
+                  (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("flameshot gui -c -p ~/Pictures")'')
+                ];
+              }
+              {
+                _args = [
+                  (lib.generators.mkLuaInline ''mainMod .. " + mouse_down"'')
+                  (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = "e+1" })'')
+                ];
+              }
+              {
+                _args = [
+                  (lib.generators.mkLuaInline ''mainMod .. " + mouse_up"'')
+                  (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = "e-1" })'')
                 ];
               }
             ];
