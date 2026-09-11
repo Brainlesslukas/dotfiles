@@ -19,6 +19,7 @@
       };
 
       config = mkIf config.programs.development.enable {
+        nixpkgs.config.allowUnfree = true;
         environment.systemPackages = with pkgs; [
           postman
           github-desktop
