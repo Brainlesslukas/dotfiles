@@ -252,6 +252,20 @@
                 };
                 no_focus = true;
               }
+              {
+                name = "discord-to-ws10";
+                match = {
+                  class = "(?i)^(discord|vesktop)$";
+                };
+                workspace = "10 silent";
+              }
+              {
+                name = "spotify-to-ws10";
+                match = {
+                  class = "(?i)^(spotify)$";
+                };
+                workspace = "10 silent";
+              }
             ];
 
             workspace_rule = [
