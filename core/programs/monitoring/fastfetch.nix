@@ -42,7 +42,7 @@
               {
                 type = "disk";
                 key = "Disk";
-                format = "{size-used} / 500GiB";
+                format = "{size-used} / 1tb";
                 keyColor = "blue";
               }
               {
