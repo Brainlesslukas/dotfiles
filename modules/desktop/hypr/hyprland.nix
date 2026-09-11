@@ -230,6 +230,20 @@
                   (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = "e-1" })'')
                 ];
               }
+              {
+                _args = [
+                  (lib.generators.mkLuaInline ''mainMod .. " + mouse:272"'')
+                  (lib.generators.mkLuaInline ''hl.dsp.window.drag()'')
+                  (lib.generators.mkLuaInline ''{ mouse = true }'')
+                ];
+              }
+              {
+                _args = [
+                  (lib.generators.mkLuaInline ''mainMod .. " + mouse:273"'')
+                  (lib.generators.mkLuaInline ''hl.dsp.window.resize()'')
+                  (lib.generators.mkLuaInline ''{ mouse = true }'')
+                ];
+              }
             ];
 
             window_rule = [
