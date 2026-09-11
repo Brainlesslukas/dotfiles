@@ -20,6 +20,14 @@
       };
 
       config = mkIf config.programs.media.enable {
+        programs.spicetify =
+          let
+            spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+          in
+          {
+            enable = true;
+          };
+
         environment.systemPackages = with pkgs; [
           vlc
           obs-studio
