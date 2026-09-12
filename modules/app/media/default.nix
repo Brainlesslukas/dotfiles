@@ -31,6 +31,7 @@
         environment.systemPackages = with pkgs; [
           vlc
           obs-studio
+          kdePackages.kdenlive
         ];
       };
     };
