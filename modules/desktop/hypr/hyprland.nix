@@ -70,6 +70,8 @@
                 (lib.generators.mkLuaInline ''
                   function()
                     hl.exec_cmd("noctalia")
+                    hl.exec_cmd("vesktop")
+                    hl.exec_cmd("spotify")
                   end'')
               ];
             };
