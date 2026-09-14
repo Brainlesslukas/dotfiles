@@ -1,4 +1,6 @@
 { self, ... }:
 {
-  flake.nixosModules.hostsDesktopModulesServices = { };
+  flake.nixosModules.hostsDesktopModulesServices = { 
+    services.CtrlpadDaemon.enable = true;
+  };
 }
