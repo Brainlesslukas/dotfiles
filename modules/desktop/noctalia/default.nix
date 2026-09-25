@@ -53,6 +53,9 @@
               address = location;
               auto_locate = false;
             };
+            plugins = {
+              enabled = [ "cleboost/hotspot" ];
+            };
             bar.default = {
               concave_edge_corners = false;
               shadow = false;
@@ -63,6 +66,7 @@
               widget_spacing = 12;
               thickness = 38;
               start = [
+                "cleboost/hotspot:toggle"
                 "session"
                 "sysmon"
                 "battery"
