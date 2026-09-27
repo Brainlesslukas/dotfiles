@@ -86,10 +86,6 @@
                 timeout = 400;
                 action = "screen_off";
               };
-              lock = {
-                timeout = 900;
-                action = "lock_and_suspend";
-              };
             };
           };
         };

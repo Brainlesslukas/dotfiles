@@ -53,7 +53,7 @@
               [ -L ${path}/static ] || ln -s ${package}/opt/OpenLinkHub/static ${path}/static
               [ -L ${path}/web ] || ln -s ${package}/opt/OpenLinkHub/web ${path}/web
 
-              ${pkgs.usbutils}/bin/lsusb -d 1b1ce | while read -r line; do
+              ${pkgs.usbutils}/bin/lsusb -d 1b1c: | while read -r line; do
               ids=$(echo "$line" | ${pkgs.gawk}/bin/awk '{print $6}')
               vendor_id=$(${pkgs.coreutils}/bin/echo "$ids" | ${pkgs.coreutils}/bin/cut -d':' -f1)
               device_id=$(${pkgs.coreutils}/bin/echo "$ids" | ${pkgs.coreutils}/bin/cut -d':' -f2)
