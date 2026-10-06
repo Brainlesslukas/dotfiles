@@ -18,7 +18,7 @@
         refreshRate = 100;
         x = 0;
         y = 0;
-        enabled = false;
+        enabled = true;
       }
     ];
   };
