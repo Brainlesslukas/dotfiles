@@ -17,7 +17,10 @@
       };
 
       config = mkIf config.services.CtrlpadDaemon.enable {
-        services.ctrlpad-daemon.enable = true;
+        services.ctrlpad-daemon = {
+          enable = true;
+          device = "34:5F:45:AB:E1:0E";
+        };
       };
     };
 }
