@@ -4,6 +4,7 @@
     programs.browsing = {
       zen.enable = true;
       chromium.enable = true;
+      helium.enable = true;
     };
     programs.development.enable = true;
     programs.communication.enable = true;

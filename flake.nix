@@ -37,7 +37,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
+      url = "github:brainlesslukas/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    helium-flake = {
+      url = "github:oxcl/nix-flake-helium-browser";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell/cachix";

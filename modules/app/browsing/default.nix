@@ -6,6 +6,7 @@
       self.nixosModules.modulesAppBrowsingFirefox
       self.nixosModules.modulesAppBrowsingChromium
       self.nixosModules.modulesAppBrowsingTor
+      self.nixosModules.modulesAppBrowsingHelium
     ];
   };
 }
