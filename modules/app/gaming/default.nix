@@ -18,10 +18,11 @@
 
       config = mkIf config.programs.gaming.enable {
         nixpkgs.config.allowUnfree = true;
+
         environment.systemPackages = with pkgs; [
           lunar-client
-          modrinth-app
           steam
+          prismlauncher
         ];
       };
     };
