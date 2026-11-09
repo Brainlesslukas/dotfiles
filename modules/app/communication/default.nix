@@ -25,6 +25,10 @@
       config = mkIf config.programs.communication.enable {
         nixpkgs.config.allowUnfree = true;
 
+        environment.systemPackages = with pkgs; [
+          whatsie
+        ];
+
         home-manager.users.${userName} = {
           imports = [ inputs.nixcord.homeModules.nixcord ];
           programs.nixcord = {

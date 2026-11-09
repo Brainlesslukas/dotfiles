@@ -9,6 +9,14 @@
     }:
     let
       inherit (lib) mkEnableOption mkIf;
+
+      all-blue = pkgs.writeScriptBin "all-blue" ''
+        #!/bin/sh
+        NUM_DEVICES=$(${pkgs.openrgb}/bin/openrgb --noautoconnect --list-devices | grep -E '^[0-9]+: ' | wc -l)
+        for i in $(seq 0 $(($NUM_DEVICES - 1))); do
+          ${pkgs.openrgb}/bin/openrgb --noautoconnect --device $i --color FFFF00 
+        done
+      '';
     in
     {
       options.services.rgb = {
@@ -21,6 +29,8 @@
         services.udev.extraRules = ''
           KERNEL=="i2c-0", MODE="0660", GROUP="OpenLinkHub"
         '';
+        boot.kernelModules = [ "i2c-dev" ];
+        hardware.i2c.enable = true;
 
         users.groups.OpenLinkHub = { };
 
@@ -28,6 +38,15 @@
           isSystemUser = true;
           group = config.users.groups.OpenLinkHub.name;
           extraGroups = [ config.users.groups.input.name ];
+        };
+
+        systemd.services.all-blue = {
+          description = "all-blue";
+          serviceConfig = {
+            ExecStart = "${all-blue}/bin/all-blue";
+            Type = "oneshot";
+          };
+          wantedBy = [ "multi-user.target" ];
         };
 
         systemd.services.OpenLinkHub =

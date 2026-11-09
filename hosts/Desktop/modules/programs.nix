@@ -14,5 +14,6 @@
     programs.emulators.enable = true;
     programs.productivity.enable = true;
     programs.ai.enable = true;
+    programs.creativity.enable = true;
   };
 }

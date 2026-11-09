@@ -11,6 +11,7 @@
       self.nixosModules.modulesAppProductivity
       self.nixosModules.modulesAppGaming
       self.nixosModules.modulesAppEmulators
+      self.nixosModules.modulesAppCreativity
     ];
   };
 }
