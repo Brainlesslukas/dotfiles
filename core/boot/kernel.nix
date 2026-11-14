@@ -22,13 +22,6 @@
           "rd.udev.log_priority=3"
           "vt.global_cursor_default=0"
         ];
-        initrd = {
-          verbose = false;
-          systemd.enable = true;
-          kernelModules = [
-            "i915"
-          ];
-        };
         consoleLogLevel = 3;
         kernelPackages = pkgs.linuxPackages_zen;
       };
