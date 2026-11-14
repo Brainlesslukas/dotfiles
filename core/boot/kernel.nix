@@ -23,7 +23,20 @@
           "vt.global_cursor_default=0"
         ];
         consoleLogLevel = 3;
-        kernelPackages = pkgs.linuxPackages_zen;
+        kernelPackages = pkgs.linuxPackagesFor (
+          pkgs.linux_zen.override {
+            argsOverride = rec {
+              src = pkgs.fetchFromGitHub {
+                owner = "zen-kernel";
+                repo = "zen-kernel";
+                rev = "v${version}";
+                hash = "sha256-pRyeC6KbFWDz3unnbAyLSEdizv2/504hjQvmE+4uhoc=";
+              };
+              version = "7.2.15-zen1";
+              modDirVersion = version;
+            };
+          }
+        );
       };
     };
 }
