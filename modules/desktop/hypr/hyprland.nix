@@ -52,7 +52,7 @@
             _var = "vicinae toggle";
           };
           screenshot = {
-            _var = "flameshot gui -c -p ~/Pictures";
+            _var = "flameshot gui -c -p ~/Screenshots";
           };
           browser = {
             _var = browser;
