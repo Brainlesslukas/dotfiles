@@ -42,6 +42,7 @@
         wayland.windowManager.hyprland = {
           configType = "lua";
           enable = true;
+          ecosystem.no_update_news = true;
           settings = {
             mainMod = {
               _var = "SUPER";
