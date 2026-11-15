@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+{self, ...}: {
   flake.nixosModules.hostsDesktopModules = {
     imports = [
       self.nixosModules.hostsDesktopModulesUserOptions

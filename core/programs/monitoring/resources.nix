@@ -1,9 +1,7 @@
 _: {
-  flake.nixosModules.coreProgramsMonitoringResources =
-    { pkgs, ... }:
-    {
-      environment.systemPackages = [
-        pkgs.resources
-      ];
-    };
+  flake.nixosModules.coreProgramsMonitoringResources = {pkgs, ...}: {
+    environment.systemPackages = [
+      pkgs.resources
+    ];
+  };
 }

@@ -1,9 +1,7 @@
 _: {
-  flake.nixosModules.modulesSecurityEncryption =
-    { pkgs, ... }:
-    {
-      environment.systemPackages = [
-        pkgs.bitwarden-desktop
-      ];
-    };
+  flake.nixosModules.modulesSecurityEncryption = {pkgs, ...}: {
+    environment.systemPackages = [
+      pkgs.bitwarden-desktop
+    ];
+  };
 }

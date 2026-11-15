@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+{self, ...}: {
   flake.nixosModules.coreBoot = {
     imports = [
       self.nixosModules.coreBootBootloader

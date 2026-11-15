@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+{self, ...}: {
   flake.nixosModules.coreBootPlymouth = {
     boot.plymouth.enable = true;
   };

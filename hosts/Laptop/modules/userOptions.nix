@@ -1,13 +1,10 @@
-{ self, ... }:
-{
-  flake.nixosModules.hostsLaptopModulesUserOptions =
-    { config, ... }:
-    {
-      config.userOptions = {
-        hostName = "Laptop";
-        userName = "lukas";
-        location = "Stuttgart, DE";
-        browser = "zen";
-      };
+{self, ...}: {
+  flake.nixosModules.hostsLaptopModulesUserOptions = {config, ...}: {
+    config.userOptions = {
+      hostName = "Laptop";
+      userName = "lukas";
+      location = "Stuttgart, DE";
+      browser = "zen";
     };
+  };
 }

@@ -1,16 +1,12 @@
-{ self, ... }:
-{
-  flake.nixosModules.modulesShellP10k =
-    { config, ... }:
-    let
-      inherit (config.userOptions) userName;
-    in
-    {
-      home-manager.users.${userName} = {
-        home.file."/home/${userName}/.config/zsh/.p10k.zsh" = {
-          force = true;
-          source = ./.p10k.zsh;
-        };
+{self, ...}: {
+  flake.nixosModules.modulesShellP10k = {config, ...}: let
+    inherit (config.userOptions) userName;
+  in {
+    home-manager.users.${userName} = {
+      home.file."/home/${userName}/.config/zsh/.p10k.zsh" = {
+        force = true;
+        source = ./.p10k.zsh;
       };
     };
+  };
 }

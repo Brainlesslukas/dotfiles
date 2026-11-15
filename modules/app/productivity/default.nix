@@ -1,36 +1,35 @@
-{ self, inputs, ... }:
 {
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.modulesAppProductivity = {
+    pkgs,
+    config,
+    lib,
+    ...
+  }: let
+    inherit (config.userOptions) userName;
+    inherit (lib) mkEnableOption mkIf;
+  in {
+    imports = [
+      inputs.home-manager.nixosModules.home-manager
+      inputs.ctrlpad-desktop.nixosModules.default
+      inputs.handy.nixosModules.default
+    ];
 
-  flake.nixosModules.modulesAppProductivity =
-    {
-      pkgs,
-      config,
-      lib,
-      ...
-    }:
-    let
-      inherit (config.userOptions) userName;
-      inherit (lib) mkEnableOption mkIf;
-    in
-    {
-      imports = [
-        inputs.home-manager.nixosModules.home-manager
-        inputs.ctrlpad-desktop.nixosModules.default
-        inputs.handy.nixosModules.default
-      ];
-
-      options.programs.productivity = {
-        enable = mkEnableOption "Enables productivity modules";
-      };
-
-      config = mkIf config.programs.productivity.enable {
-        programs.ctrlpad-desktop.enable = true;
-        environment.systemPackages = with pkgs; [
-          handy
-          obsidian
-          onlyoffice-desktopeditors
-          thunderbird
-        ];
-      };
+    options.programs.productivity = {
+      enable = mkEnableOption "Enables productivity modules";
     };
+
+    config = mkIf config.programs.productivity.enable {
+      programs.ctrlpad-desktop.enable = true;
+      environment.systemPackages = with pkgs; [
+        handy
+        obsidian
+        onlyoffice-desktopeditors
+        thunderbird
+      ];
+    };
+  };
 }

@@ -1,9 +1,7 @@
 _: {
-  flake.nixosModules.coreProgramsUtilsTtyclock =
-    { pkgs, ... }:
-    {
-      environment.systemPackages = [
-        pkgs.tty-clock
-      ];
-    };
+  flake.nixosModules.coreProgramsUtilsTtyclock = {pkgs, ...}: {
+    environment.systemPackages = [
+      pkgs.tty-clock
+    ];
+  };
 }

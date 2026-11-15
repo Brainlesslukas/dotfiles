@@ -1,6 +1,6 @@
 {
   nixConfig = {
-    extra-substituters = [ "https://noctalia.cachix.org" ];
+    extra-substituters = ["https://noctalia.cachix.org"];
     extra-trusted-public-keys = [
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
@@ -57,11 +57,9 @@
     nixcord.url = "github:FlameFlag/nixcord";
   };
 
-  outputs =
-    inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
-      { ... }:
-      {
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} (
+      {...}: {
         imports = [
           (inputs.import-tree ./hosts)
           (inputs.import-tree ./modules)

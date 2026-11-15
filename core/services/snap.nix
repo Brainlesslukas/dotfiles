@@ -1,7 +1,10 @@
-{ self, inputs, ... }:
 {
+  self,
+  inputs,
+  ...
+}: {
   flake.nixosModules.coreServicesSnap = {
-    imports = [ inputs.nix-snapd.nixosModules.default ];
+    imports = [inputs.nix-snapd.nixosModules.default];
     services.snap.enable = false;
   };
 }

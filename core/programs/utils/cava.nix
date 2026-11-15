@@ -1,9 +1,7 @@
 _: {
-  flake.nixosModules.coreProgramsUtilsCava =
-    { pkgs, ... }:
-    {
-      environment.systemPackages = [
-        pkgs.cava
-      ];
-    };
+  flake.nixosModules.coreProgramsUtilsCava = {pkgs, ...}: {
+    environment.systemPackages = [
+      pkgs.cava
+    ];
+  };
 }

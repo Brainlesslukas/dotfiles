@@ -1,9 +1,7 @@
 _: {
-  flake.nixosModules.coreProgramsUtilsPipes =
-    { pkgs, ... }:
-    {
-      environment.systemPackages = [
-        pkgs.pipes
-      ];
-    };
+  flake.nixosModules.coreProgramsUtilsPipes = {pkgs, ...}: {
+    environment.systemPackages = [
+      pkgs.pipes
+    ];
+  };
 }

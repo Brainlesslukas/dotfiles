@@ -1,9 +1,7 @@
 _: {
-  flake.nixosModules.coreProgramsMonitoringBtop =
-    { pkgs, ... }:
-    {
-      environment.systemPackages = [
-        pkgs.btop
-      ];
-    };
+  flake.nixosModules.coreProgramsMonitoringBtop = {pkgs, ...}: {
+    environment.systemPackages = [
+      pkgs.btop
+    ];
+  };
 }

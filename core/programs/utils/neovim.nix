@@ -1,11 +1,15 @@
-{ self, inputs, ... }:
 {
-
-  flake.nixosModules.coreProgramsUtilsNeovim =
-    { config, pkgs, ... }:
-    {
-      programs.neovim = {
-        enable = true;
-      };
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.coreProgramsUtilsNeovim = {
+    config,
+    pkgs,
+    ...
+  }: {
+    programs.neovim = {
+      enable = true;
     };
+  };
 }

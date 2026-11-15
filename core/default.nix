@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+{self, ...}: {
   flake.nixosModules.core = {
     imports = [
       self.nixosModules.coreProgramsUtils

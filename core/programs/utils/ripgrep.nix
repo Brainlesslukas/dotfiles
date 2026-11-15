@@ -1,9 +1,7 @@
 _: {
-  flake.nixosModules.coreProgramsUtilsRipgrep =
-    { pkgs, ... }:
-    {
-      environment.systemPackages = [
-        pkgs.ripgrep
-      ];
-    };
+  flake.nixosModules.coreProgramsUtilsRipgrep = {pkgs, ...}: {
+    environment.systemPackages = [
+      pkgs.ripgrep
+    ];
+  };
 }

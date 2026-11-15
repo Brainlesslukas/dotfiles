@@ -1,7 +1,5 @@
 _: {
-  perSystem =
-    { pkgs, ... }:
-    {
-      formatter = pkgs.nixfmt-tree;
-    };
+  perSystem = {pkgs, ...}: {
+    formatter = pkgs.alejandra;
+  };
 }

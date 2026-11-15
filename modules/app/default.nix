@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+{self, ...}: {
   flake.nixosModules.modulesApp = {
     imports = [
       self.nixosModules.modulesAppTerminal

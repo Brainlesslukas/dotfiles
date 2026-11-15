@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+{self, ...}: {
   flake.nixosModules.coreHardwareGraphics = {
     hardware.graphics = {
       enable = true;

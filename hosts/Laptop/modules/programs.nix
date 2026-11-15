@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+{self, ...}: {
   flake.nixosModules.hostsLaptopModulesPrograms = {
     programs.browsing = {
       firefox.enable = true;

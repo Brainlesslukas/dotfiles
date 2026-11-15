@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+{self, ...}: {
   flake.nixosModules.hostsDesktopModulesPrograms = {
     programs.browsing = {
       zen.enable = true;
