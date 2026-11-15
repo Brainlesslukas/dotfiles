@@ -18,6 +18,7 @@
         statix
         eza
         gcc
+        wtype
       ];
 
       home-manager.users.${userName} = {

@@ -17,6 +17,9 @@
     ctrlpad-daemon = {
       url = "github:ctrlpad/daemon";
     };
+    handy = {
+      url = "github:cjpais/Handy";
+    };
     ctrlpad-desktop = {
       url = "github:ctrlpad/desktop/v0.0.4";
     };

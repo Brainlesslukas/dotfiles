@@ -198,8 +198,14 @@
               }
               {
                 _args = [
-                  (lib.generators.mkLuaInline ''mainMod .. " + W"'')
+                  (lib.generators.mkLuaInline ''mainMod .. " + Z"'')
                   (lib.generators.mkLuaInline "hl.dsp.exec_cmd(browser)")
+                ];
+              }
+              {
+                _args = [
+                  (lib.generators.mkLuaInline ''"Ctrl_L" .. " + W"'')
+                  (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("handy --toggle-transcription")'')
                 ];
               }
               {

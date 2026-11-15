@@ -16,6 +16,7 @@
       imports = [
         inputs.home-manager.nixosModules.home-manager
         inputs.ctrlpad-desktop.nixosModules.default
+        inputs.handy.nixosModules.default
       ];
 
       options.programs.productivity = {
@@ -25,6 +26,7 @@
       config = mkIf config.programs.productivity.enable {
         programs.ctrlpad-desktop.enable = true;
         environment.systemPackages = with pkgs; [
+          handy
           obsidian
           onlyoffice-desktopeditors
           thunderbird

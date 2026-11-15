@@ -28,7 +28,6 @@
       config = mkIf config.programs.ai.enable {
         environment.systemPackages = with pkgs; [
           claude-code
-          mistralVibe
           llama-cpp-vulkan
         ];
       };
