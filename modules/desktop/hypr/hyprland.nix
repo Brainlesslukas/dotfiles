@@ -205,7 +205,7 @@
               {
                 _args = [
                   (lib.generators.mkLuaInline ''"Ctrl_L" .. " + W"'')
-                  (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("handy --toggle-transcription")'')
+                  (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("handy --toggle-transcription --start-hidden")'')
                 ];
               }
               {
