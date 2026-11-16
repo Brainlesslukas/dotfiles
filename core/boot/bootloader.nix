@@ -7,6 +7,7 @@
           device = "nodev";
           efiSupport = true;
         };
+        limine.enable = true;
         efi.canTouchEfiVariables = true;
       };
     };
