@@ -1,15 +1,19 @@
-{self, ...}: {
-  flake.nixosModules.coreBootBootloader = {
+{
+  self,
+  pkgs,
+  ...
+}: {
+  flake.nixosModules.coreBootBootloader = {pkgs, ...}: {
     boot = {
       loader = {
-        grub = {
-          enable = true;
-          device = "nodev";
-          efiSupport = true;
-        };
         limine.enable = true;
+        limine.secureBoot.enable = true;
         efi.canTouchEfiVariables = true;
       };
     };
+
+    environment.systemPackages = [
+      pkgs.sbctl
+    ];
   };
 }
